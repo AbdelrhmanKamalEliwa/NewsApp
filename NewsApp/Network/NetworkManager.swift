@@ -13,9 +13,12 @@ class NetworkManager {
     public let session = URLSession(configuration: .default)
     
     func request<T: Codable>(
-        url: URL, httpMethod: HTTPMethod, parameters: Data?,
-        headers: [String: String]?, completionHandler: @escaping(_ result: APIResult<T>) -> ())
-        -> URLSessionTask {
+        url: URL,
+        httpMethod: HTTPMethod,
+        parameters: Data?,
+        headers: [String: String]?,
+        completionHandler: @escaping(_ result: APIResult<T>) -> Void
+    ) -> URLSessionTask {
         
         // defining the type of method
         var urlRequest: URLRequest = URLRequest(url: url)
