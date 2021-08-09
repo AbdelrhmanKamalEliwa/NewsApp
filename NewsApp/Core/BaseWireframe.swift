@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol BaseProtocol: ProgressDisplayerProtocol, AlertDisplayerProtocol, LoadingViewProtocol { }
+protocol BaseProtocol: ProgressDisplayerProtocol, AlertDisplayerProtocol { }
 
 class BaseWireframe: UIViewController, BaseProtocol {
     

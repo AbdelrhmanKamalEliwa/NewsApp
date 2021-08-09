@@ -9,4 +9,5 @@ target 'NewsApp' do
     pod 'lottie-ios'
     pod 'Kingfisher', '~> 6.0'
     pod 'ProgressHUD'
+    pod 'SKCountryPicker'
 end

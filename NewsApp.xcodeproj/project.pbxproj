@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,7 @@
 		5A7A54A926C144EE0015CA43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7A54A826C144EE0015CA43 /* AppDelegate.swift */; };
 		5A7A54B226C144F30015CA43 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A7A54B126C144F30015CA43 /* Icons.xcassets */; };
 		5A7A54B526C144F30015CA43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A7A54B326C144F30015CA43 /* LaunchScreen.storyboard */; };
+		F41B09A026C1858F0076211A /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41B099F26C1858F0076211A /* MainRouter.swift */; };
 		F41C516B26C165C40061D188 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F41C516A26C165C40061D188 /* Colors.xcassets */; };
 		F41C517326C166DA0061D188 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = F41C517226C166DA0061D188 /* .swiftlint.yml */; };
 		F41C517826C167DB0061D188 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C517626C167DB0061D188 /* HTTPMethod.swift */; };
@@ -21,7 +22,6 @@
 		F41C518926C16D830061D188 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C518726C16D830061D188 /* OnboardingVC.swift */; };
 		F41C518A26C16D830061D188 /* OnboardingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F41C518826C16D830061D188 /* OnboardingVC.xib */; };
 		F41C519326C16D9B0061D188 /* BaseWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C519126C16D9B0061D188 /* BaseWireframe.swift */; };
-		F41C519426C16D9B0061D188 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C519226C16D9B0061D188 /* MainRouter.swift */; };
 		F41C519826C16DF10061D188 /* ProgressDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C519526C16DF00061D188 /* ProgressDisplayer.swift */; };
 		F41C519926C16DF10061D188 /* Navbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C519626C16DF10061D188 /* Navbar.swift */; };
 		F41C519A26C16DF10061D188 /* AlertDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C519726C16DF10061D188 /* AlertDisplayer.swift */; };
@@ -36,6 +36,9 @@
 		F41C51AE26C16E670061D188 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C51A826C16E670061D188 /* Date+Extension.swift */; };
 		F41C51AF26C16E670061D188 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C51A926C16E670061D188 /* UIFont+Extension.swift */; };
 		F41C51C826C16F4C0061D188 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C51C726C16F4C0061D188 /* LoadingView.swift */; };
+		F4E4E41B26C18FFB00997754 /* OnboardingProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4E41A26C18FFB00997754 /* OnboardingProtocols.swift */; };
+		F4E4E41D26C1916C00997754 /* OnboardingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4E41C26C1916C00997754 /* OnboardingPresenter.swift */; };
+		F4E4E41F26C1918800997754 /* OnboardingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4E41E26C1918800997754 /* OnboardingRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +50,7 @@
 		5A7A54B426C144F30015CA43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A7A54B626C144F30015CA43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		847E9F887BFA5F3206E4B13A /* Pods_NewsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F41B099F26C1858F0076211A /* MainRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		F41C516A26C165C40061D188 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		F41C517226C166DA0061D188 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		F41C517626C167DB0061D188 /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
@@ -57,7 +61,6 @@
 		F41C518726C16D830061D188 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
 		F41C518826C16D830061D188 /* OnboardingVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingVC.xib; sourceTree = "<group>"; };
 		F41C519126C16D9B0061D188 /* BaseWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWireframe.swift; sourceTree = "<group>"; };
-		F41C519226C16D9B0061D188 /* MainRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		F41C519526C16DF00061D188 /* ProgressDisplayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressDisplayer.swift; sourceTree = "<group>"; };
 		F41C519626C16DF10061D188 /* Navbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navbar.swift; sourceTree = "<group>"; };
 		F41C519726C16DF10061D188 /* AlertDisplayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertDisplayer.swift; sourceTree = "<group>"; };
@@ -90,6 +93,9 @@
 		F41C51C426C16ECD0061D188 /* SF-Pro-Text-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Heavy.otf"; sourceTree = "<group>"; };
 		F41C51C526C16ECE0061D188 /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
 		F41C51C726C16F4C0061D188 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		F4E4E41A26C18FFB00997754 /* OnboardingProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingProtocols.swift; sourceTree = "<group>"; };
+		F4E4E41C26C1916C00997754 /* OnboardingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPresenter.swift; sourceTree = "<group>"; };
+		F4E4E41E26C1918800997754 /* OnboardingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,7 +116,6 @@
 				1311AA432D6E5D9F34E519EB /* Pods-NewsApp.debug.xcconfig */,
 				10563487B2ACECFC96C3AB57 /* Pods-NewsApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -193,10 +198,10 @@
 		F41C516826C165A50061D188 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				F41C51C626C16F3A0061D188 /* Animations */,
 				5A7A54B126C144F30015CA43 /* Icons.xcassets */,
 				F41C516A26C165C40061D188 /* Colors.xcassets */,
 				F41C51B226C16EB30061D188 /* Fonts */,
+				F41C51C626C16F3A0061D188 /* Animations */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -204,6 +209,7 @@
 		F41C516C26C165DD0061D188 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				F4E4E42026C1A6B300997754 /* Headlines */,
 				F41C518126C16D5D0061D188 /* Onboarding */,
 			);
 			path = Scenes;
@@ -213,7 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				F41C519126C16D9B0061D188 /* BaseWireframe.swift */,
-				F41C519226C16D9B0061D188 /* MainRouter.swift */,
+				F41B099F26C1858F0076211A /* MainRouter.swift */,
 				F41C519B26C16DF20061D188 /* Protocols */,
 			);
 			path = Core;
@@ -275,7 +281,6 @@
 			children = (
 				F41C518626C16D720061D188 /* Protocols */,
 				F41C518526C16D6F0061D188 /* Router */,
-				F41C518426C16D690061D188 /* Interactor */,
 				F41C518326C16D640061D188 /* Presenter */,
 				F41C518226C16D620061D188 /* View */,
 			);
@@ -294,20 +299,15 @@
 		F41C518326C16D640061D188 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				F4E4E41C26C1916C00997754 /* OnboardingPresenter.swift */,
 			);
 			path = Presenter;
-			sourceTree = "<group>";
-		};
-		F41C518426C16D690061D188 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Interactor;
 			sourceTree = "<group>";
 		};
 		F41C518526C16D6F0061D188 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				F4E4E41E26C1918800997754 /* OnboardingRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -315,6 +315,7 @@
 		F41C518626C16D720061D188 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				F4E4E41A26C18FFB00997754 /* OnboardingProtocols.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -368,6 +369,53 @@
 			children = (
 			);
 			path = Animations;
+			sourceTree = "<group>";
+		};
+		F4E4E42026C1A6B300997754 /* Headlines */ = {
+			isa = PBXGroup;
+			children = (
+				F4E4E42526C1A6D300997754 /* Protocols */,
+				F4E4E42426C1A6D000997754 /* Router */,
+				F4E4E42326C1A6C900997754 /* Interactor */,
+				F4E4E42226C1A6C500997754 /* Presenter */,
+				F4E4E42126C1A6C100997754 /* View */,
+			);
+			path = Headlines;
+			sourceTree = "<group>";
+		};
+		F4E4E42126C1A6C100997754 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F4E4E42226C1A6C500997754 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F4E4E42326C1A6C900997754 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		F4E4E42426C1A6D000997754 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		F4E4E42526C1A6D300997754 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -517,6 +565,7 @@
 				F41C51A026C16E3D0061D188 /* SelfResizingTableView.swift in Sources */,
 				F41C51AF26C16E670061D188 /* UIFont+Extension.swift in Sources */,
 				F41C517826C167DB0061D188 /* HTTPMethod.swift in Sources */,
+				F4E4E41B26C18FFB00997754 /* OnboardingProtocols.swift in Sources */,
 				F41C51AE26C16E670061D188 /* Date+Extension.swift in Sources */,
 				F41C517D26C168210061D188 /* NewsAPIEnvironmentPath.swift in Sources */,
 				F41C519926C16DF10061D188 /* Navbar.swift in Sources */,
@@ -526,8 +575,10 @@
 				5A7A54A926C144EE0015CA43 /* AppDelegate.swift in Sources */,
 				F41C518926C16D830061D188 /* OnboardingVC.swift in Sources */,
 				F41C51AA26C16E670061D188 /* UIImageView+Extension.swift in Sources */,
-				F41C519426C16D9B0061D188 /* MainRouter.swift in Sources */,
+				F4E4E41D26C1916C00997754 /* OnboardingPresenter.swift in Sources */,
+				F4E4E41F26C1918800997754 /* OnboardingRouter.swift in Sources */,
 				F41C51C826C16F4C0061D188 /* LoadingView.swift in Sources */,
+				F41B09A026C1858F0076211A /* MainRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

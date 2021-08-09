@@ -20,6 +20,27 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+    <key>UIAppFonts</key>
+    <array>
+        <string>SF-Pro-Text-Black.otf</string>
+        <string>SF-Pro-Text-BlackItalic.otf</string>
+        <string>SF-Pro-Text-Bold</string>
+        <string>SF-Pro-Text-BoldItalic</string>
+        <string>SF-Pro-Text-Heavy</string>
+        <string>SF-Pro-Text-HeavyItalic</string>
+        <string>SF-Pro-Text-Light</string>
+        <string>SF-Pro-Text-LightItalic</string>
+        <string>SF-Pro-Text-Medium</string>
+        <string>SF-Pro-Text-MediumItalic</string>
+        <string>SF-Pro-Text-Regular.otf</string>
+        <string>SF-Pro-Text-RegularItalic.otf</string>
+        <string>SF-Pro-Text-Semibold</string>
+        <string>SF-Pro-Text-SemiboldItalic</string>
+        <string>SF-Pro-Text-Thin</string>
+        <string>SF-Pro-Text-ThinItalic</string>
+        <string>SF-Pro-Text-Ultralight</string>
+        <string>SF-Pro-Text-UltralightItalic</string>
+    </array>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>

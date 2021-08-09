@@ -10,14 +10,23 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    var window: UIWindow?
+    var mainRouter: MainRouter?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        window = UIWindow()
-        let view = UIViewController()
-        view.view.backgroundColor = .red
-        window?.rootViewController = view
-        window?.makeKeyAndVisible()
+        setupMainRouter()
         return true
+    }
+    
+    private func setupMainRouter() {
+        mainRouter = MainRouter()
+        var initialVC = UINavigationController()
+        let onboardingVC = OnboardingRouter.createModule()
+        let homeVC = UIViewController()
+        if UserDataManager.shared.didUserSeeOnboardingScreen {
+            initialVC = UINavigationController(rootViewController: onboardingVC)
+        } else {
+            initialVC = UINavigationController(rootViewController: onboardingVC)
+        }
+        mainRouter?.start(with: initialVC)
     }
 }
