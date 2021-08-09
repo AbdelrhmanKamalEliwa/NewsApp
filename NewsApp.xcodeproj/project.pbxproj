@@ -12,6 +12,11 @@
 		5A7A54B526C144F30015CA43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A7A54B326C144F30015CA43 /* LaunchScreen.storyboard */; };
 		F41C516B26C165C40061D188 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F41C516A26C165C40061D188 /* Colors.xcassets */; };
 		F41C517326C166DA0061D188 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = F41C517226C166DA0061D188 /* .swiftlint.yml */; };
+		F41C517826C167DB0061D188 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C517626C167DB0061D188 /* HTTPMethod.swift */; };
+		F41C517926C167DB0061D188 /* APIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C517726C167DB0061D188 /* APIResult.swift */; };
+		F41C517B26C167E70061D188 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C517A26C167E70061D188 /* NetworkManager.swift */; };
+		F41C517D26C168210061D188 /* NewsAPIEnvironmentPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C517C26C168210061D188 /* NewsAPIEnvironmentPath.swift */; };
+		F41C517F26C1685A0061D188 /* EndPointRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C517E26C1685A0061D188 /* EndPointRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		5A7A54B626C144F30015CA43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F41C516A26C165C40061D188 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		F41C517226C166DA0061D188 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		F41C517626C167DB0061D188 /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		F41C517726C167DB0061D188 /* APIResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIResult.swift; sourceTree = "<group>"; };
+		F41C517A26C167E70061D188 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		F41C517C26C168210061D188 /* NewsAPIEnvironmentPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsAPIEnvironmentPath.swift; sourceTree = "<group>"; };
+		F41C517E26C1685A0061D188 /* EndPointRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPointRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +151,8 @@
 		F41C517026C1660B0061D188 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				F41C517A26C167E70061D188 /* NetworkManager.swift */,
+				F41C517526C167BF0061D188 /* Entities */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -148,8 +160,19 @@
 		F41C517126C166130061D188 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				F41C517E26C1685A0061D188 /* EndPointRouter.swift */,
+				F41C517C26C168210061D188 /* NewsAPIEnvironmentPath.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		F41C517526C167BF0061D188 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				F41C517726C167DB0061D188 /* APIResult.swift */,
+				F41C517626C167DB0061D188 /* HTTPMethod.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,6 +268,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F41C517B26C167E70061D188 /* NetworkManager.swift in Sources */,
+				F41C517F26C1685A0061D188 /* EndPointRouter.swift in Sources */,
+				F41C517926C167DB0061D188 /* APIResult.swift in Sources */,
+				F41C517826C167DB0061D188 /* HTTPMethod.swift in Sources */,
+				F41C517D26C168210061D188 /* NewsAPIEnvironmentPath.swift in Sources */,
 				5A7A54A926C144EE0015CA43 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
