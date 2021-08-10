@@ -18,13 +18,19 @@ extension ProgressDisplayerProtocol where Self: UIViewController {
         ProgressHUD.colorBackground = backgroundColor
         ProgressHUD.colorProgress = spinnerColor
         ProgressHUD.show()
-        view.isUserInteractionEnabled = false
-        navigationController?.view.isUserInteractionEnabled = false
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.view.isUserInteractionEnabled = false
+            self.navigationController?.view.isUserInteractionEnabled = false
+        }
     }
     
     func hideProgress() {
         ProgressHUD.dismiss()
-        view.isUserInteractionEnabled = true
-        navigationController?.view.isUserInteractionEnabled = true
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.view.isUserInteractionEnabled = true
+            self.navigationController?.view.isUserInteractionEnabled = true
+        }
     }
 }

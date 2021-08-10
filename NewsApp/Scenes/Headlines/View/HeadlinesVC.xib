@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeadlinesVC" customModule="NewsApp" customModuleProvider="target">
+            <connections>
+                <outlet property="searchBar" destination="ksE-Ta-rVh" id="Eva-cT-sCw"/>
+                <outlet property="segmentedControl" destination="Oaf-8W-i4k" id="bze-YI-Hnz"/>
+                <outlet property="segmentedControlBottomConstraint" destination="68u-AS-qnh" id="gVc-7e-wmp"/>
+                <outlet property="tableView" destination="bMV-D0-y4P" id="sZq-mb-6Ij"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="ksE-Ta-rVh">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="51"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bMV-D0-y4P">
+                    <rect key="frame" x="0.0" y="51" width="414" height="685"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Oaf-8W-i4k">
+                    <rect key="frame" x="75.666666666666686" y="675" width="263" height="32"/>
+                    <color key="backgroundColor" systemColor="systemGray5Color"/>
+                    <segments>
+                        <segment title="Category 1"/>
+                        <segment title="Category 2"/>
+                        <segment title="Category 3"/>
+                    </segments>
+                    <color key="selectedSegmentTintColor" name="AppYellow"/>
+                    <connections>
+                        <action selector="didTapSegmentedControl:" destination="-1" eventType="valueChanged" id="s8F-6U-qb5"/>
+                    </connections>
+                </segmentedControl>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Oaf-8W-i4k" secondAttribute="bottom" constant="30" id="68u-AS-qnh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Oaf-8W-i4k" secondAttribute="trailing" constant="20" id="7Wr-en-kSG"/>
+                <constraint firstItem="bMV-D0-y4P" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="9xD-yC-iRe"/>
+                <constraint firstItem="ksE-Ta-rVh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="VZf-UI-MqO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bMV-D0-y4P" secondAttribute="trailing" id="Ziz-j0-3LY"/>
+                <constraint firstItem="ksE-Ta-rVh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="nOa-Be-rse"/>
+                <constraint firstItem="Oaf-8W-i4k" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="nxF-74-GVd"/>
+                <constraint firstItem="Oaf-8W-i4k" firstAttribute="centerX" secondItem="bMV-D0-y4P" secondAttribute="centerX" id="ocQ-rc-kSJ"/>
+                <constraint firstItem="bMV-D0-y4P" firstAttribute="top" secondItem="ksE-Ta-rVh" secondAttribute="bottom" id="pie-0l-bK2"/>
+                <constraint firstAttribute="bottom" secondItem="bMV-D0-y4P" secondAttribute="bottom" id="qch-de-MYQ"/>
+                <constraint firstItem="ksE-Ta-rVh" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="se1-ne-siF"/>
+            </constraints>
+            <point key="canvasLocation" x="122" y="78"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="AppYellow">
+            <color red="1" green="0.58399999141693115" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

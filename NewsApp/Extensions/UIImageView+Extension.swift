@@ -11,7 +11,7 @@ extension UIImageView {
     func setImageUrl(_ imageUrl: String?) {
         if let imageUrl = imageUrl {
             guard let url = URL(string: imageUrl) else {
-                self.image = UIImage(named: "profile.pic")?
+                self.image = UIImage(named: "not.found")?
                     .imageFlippedForRightToLeftLayoutDirection()
                 return
             }
@@ -24,13 +24,13 @@ extension UIImageView {
                 case .success(let image):
                     self.self.image = image.image
                 case .failure:
-                    self.self.image = UIImage(named: "profile.pic")?
+                    self.self.image = UIImage(named: "not.found")?
                         .imageFlippedForRightToLeftLayoutDirection()
                     return
                 }
             }
         } else {
-            self.self.image = UIImage(named: "profile.pic")?
+            self.self.image = UIImage(named: "not.found")?
                 .imageFlippedForRightToLeftLayoutDirection()
         }
     }

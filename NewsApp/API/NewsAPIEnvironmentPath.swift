@@ -8,15 +8,38 @@
 
 import Foundation
 
-struct NewsAPIService {
-    static func baseURL() -> String {
-        return
-            NewsAPIEnvironmentPath.development.scheme() +
-            NewsAPIEnvironmentPath.development.host() +
-            "/v2/top-headlines?apiKey=" +
-            NewsAPIEnvironmentPath.development.apiKey()
+enum NewsAPIService {
+    case headlines
+    case everything
+    
+    func baseURL() -> String {
+        switch self {
+        case .headlines:
+            return
+                NewsAPIEnvironmentPath.development.scheme() +
+                NewsAPIEnvironmentPath.development.host() + "/v2/" + "top-headlines?"
+        case .everything:
+            return
+                NewsAPIEnvironmentPath.development.scheme() +
+                NewsAPIEnvironmentPath.development.host() + "/v2/" + "everything?"
+        }
     }
 }
+
+//struct NewsAPIService {
+//    static func baseURL(for type: NewsAPIBaseURLTypes) -> String {
+//        switch type {
+//        case .headlines:
+//            return
+//                NewsAPIEnvironmentPath.development.scheme() +
+//                NewsAPIEnvironmentPath.development.host() + "/v2/" + type.rawValue
+//        case .everything:
+//            return
+//                NewsAPIEnvironmentPath.development.scheme() +
+//                NewsAPIEnvironmentPath.development.host() + "/v2/" + type.rawValue
+//        }
+//    }
+//}
 
 enum NewsAPIEnvironmentPath {
     

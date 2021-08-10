@@ -25,20 +25,44 @@
 		F41C519826C16DF10061D188 /* ProgressDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C519526C16DF00061D188 /* ProgressDisplayer.swift */; };
 		F41C519926C16DF10061D188 /* Navbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C519626C16DF10061D188 /* Navbar.swift */; };
 		F41C519A26C16DF10061D188 /* AlertDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C519726C16DF10061D188 /* AlertDisplayer.swift */; };
-		F41C51A026C16E3D0061D188 /* SelfResizingTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C519C26C16E3D0061D188 /* SelfResizingTableView.swift */; };
-		F41C51A126C16E3D0061D188 /* SelfResizingCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C519D26C16E3D0061D188 /* SelfResizingCollectionView.swift */; };
 		F41C51A226C16E3D0061D188 /* UserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C519E26C16E3D0061D188 /* UserDataManager.swift */; };
-		F41C51A326C16E3D0061D188 /* NibLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C519F26C16E3D0061D188 /* NibLoadingView.swift */; };
 		F41C51AA26C16E670061D188 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C51A426C16E670061D188 /* UIImageView+Extension.swift */; };
 		F41C51AB26C16E670061D188 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C51A526C16E670061D188 /* UIView+Extension.swift */; };
-		F41C51AC26C16E670061D188 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C51A626C16E670061D188 /* UICollectionView+Extensions.swift */; };
 		F41C51AD26C16E670061D188 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C51A726C16E670061D188 /* UITableView+Extensions.swift */; };
-		F41C51AE26C16E670061D188 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C51A826C16E670061D188 /* Date+Extension.swift */; };
 		F41C51AF26C16E670061D188 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C51A926C16E670061D188 /* UIFont+Extension.swift */; };
 		F41C51C826C16F4C0061D188 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C51C726C16F4C0061D188 /* LoadingView.swift */; };
+		F482ADDB26C205C7002DF570 /* SF-Pro-Text-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F41C51C126C16ECD0061D188 /* SF-Pro-Text-RegularItalic.otf */; };
+		F482ADDC26C205C7002DF570 /* SF-Pro-Text-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F41C51B526C16ECB0061D188 /* SF-Pro-Text-SemiboldItalic.otf */; };
+		F482ADDD26C205C7002DF570 /* SF-Pro-Text-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = F41C51BE26C16ECC0061D188 /* SF-Pro-Text-Black.otf */; };
+		F482ADDE26C205C7002DF570 /* SF-Pro-Text-Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = F41C51C426C16ECD0061D188 /* SF-Pro-Text-Heavy.otf */; };
+		F482ADDF26C205C7002DF570 /* SF-Pro-Text-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F41C51C526C16ECE0061D188 /* SF-Pro-Text-Medium.otf */; };
+		F482ADE026C205C7002DF570 /* SF-Pro-Text-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = F41C51C226C16ECD0061D188 /* SF-Pro-Text-Ultralight.otf */; };
+		F482ADE126C205C7002DF570 /* SF-Pro-Text-UltralightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F41C51C326C16ECD0061D188 /* SF-Pro-Text-UltralightItalic.otf */; };
+		F482ADE226C205C7002DF570 /* SF-Pro-Text-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F41C51B926C16ECC0061D188 /* SF-Pro-Text-Regular.otf */; };
+		F482ADE326C205C7002DF570 /* SF-Pro-Text-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F41C51B626C16ECB0061D188 /* SF-Pro-Text-Semibold.otf */; };
+		F482ADE426C205C7002DF570 /* SF-Pro-Text-ThinItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F41C51BF26C16ECD0061D188 /* SF-Pro-Text-ThinItalic.otf */; };
+		F482ADE526C205C7002DF570 /* SF-Pro-Text-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F41C51B726C16ECB0061D188 /* SF-Pro-Text-Bold.otf */; };
+		F482ADE626C205C7002DF570 /* SF-Pro-Text-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F41C51BC26C16ECC0061D188 /* SF-Pro-Text-BoldItalic.otf */; };
+		F482ADE726C205C7002DF570 /* SF-Pro-Text-MediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F41C51C026C16ECD0061D188 /* SF-Pro-Text-MediumItalic.otf */; };
+		F482ADE826C205C7002DF570 /* SF-Pro-Text-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = F41C51B426C16ECB0061D188 /* SF-Pro-Text-Thin.otf */; };
+		F482ADE926C205C7002DF570 /* SF-Pro-Text-HeavyItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F41C51BD26C16ECC0061D188 /* SF-Pro-Text-HeavyItalic.otf */; };
+		F482ADEA26C205C7002DF570 /* SF-Pro-Text-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = F41C51BA26C16ECC0061D188 /* SF-Pro-Text-Light.otf */; };
+		F482ADEB26C205C7002DF570 /* SF-Pro-Text-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F41C51BB26C16ECC0061D188 /* SF-Pro-Text-LightItalic.otf */; };
+		F482ADEC26C205C7002DF570 /* SF-Pro-Text-BlackItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F41C51B826C16ECC0061D188 /* SF-Pro-Text-BlackItalic.otf */; };
+		F482ADEF26C20995002DF570 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F482ADEE26C20995002DF570 /* String+Extension.swift */; };
+		F482ADF126C20A0E002DF570 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F482ADF026C20A0E002DF570 /* Date+Extension.swift */; };
 		F4E4E41B26C18FFB00997754 /* OnboardingProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4E41A26C18FFB00997754 /* OnboardingProtocols.swift */; };
 		F4E4E41D26C1916C00997754 /* OnboardingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4E41C26C1916C00997754 /* OnboardingPresenter.swift */; };
 		F4E4E41F26C1918800997754 /* OnboardingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4E41E26C1918800997754 /* OnboardingRouter.swift */; };
+		F4E4E42926C1B0E400997754 /* HeadlinesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4E42726C1B0E400997754 /* HeadlinesVC.swift */; };
+		F4E4E42A26C1B0E400997754 /* HeadlinesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4E4E42826C1B0E400997754 /* HeadlinesVC.xib */; };
+		F4E4E42C26C1BCA900997754 /* HeadlinesProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4E42B26C1BCA900997754 /* HeadlinesProtocols.swift */; };
+		F4E4E42E26C1BE3200997754 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4E42D26C1BE3200997754 /* NewsModel.swift */; };
+		F4E4E43126C1C09A00997754 /* HeadlineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4E42F26C1C09A00997754 /* HeadlineCell.swift */; };
+		F4E4E43226C1C09A00997754 /* HeadlineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4E4E43026C1C09A00997754 /* HeadlineCell.xib */; };
+		F4E4E43426C1C55500997754 /* HeadlinesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4E43326C1C55500997754 /* HeadlinesPresenter.swift */; };
+		F4E4E43626C1C75F00997754 /* HeadlinesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4E43526C1C75F00997754 /* HeadlinesInteractor.swift */; };
+		F4E4E43826C1C98400997754 /* HeadlinesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4E4E43726C1C98400997754 /* HeadlinesRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,15 +88,10 @@
 		F41C519526C16DF00061D188 /* ProgressDisplayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressDisplayer.swift; sourceTree = "<group>"; };
 		F41C519626C16DF10061D188 /* Navbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navbar.swift; sourceTree = "<group>"; };
 		F41C519726C16DF10061D188 /* AlertDisplayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertDisplayer.swift; sourceTree = "<group>"; };
-		F41C519C26C16E3D0061D188 /* SelfResizingTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfResizingTableView.swift; sourceTree = "<group>"; };
-		F41C519D26C16E3D0061D188 /* SelfResizingCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelfResizingCollectionView.swift; sourceTree = "<group>"; };
 		F41C519E26C16E3D0061D188 /* UserDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataManager.swift; sourceTree = "<group>"; };
-		F41C519F26C16E3D0061D188 /* NibLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadingView.swift; sourceTree = "<group>"; };
 		F41C51A426C16E670061D188 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		F41C51A526C16E670061D188 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
-		F41C51A626C16E670061D188 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 		F41C51A726C16E670061D188 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
-		F41C51A826C16E670061D188 /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		F41C51A926C16E670061D188 /* UIFont+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		F41C51B426C16ECB0061D188 /* SF-Pro-Text-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Thin.otf"; sourceTree = "<group>"; };
 		F41C51B526C16ECB0061D188 /* SF-Pro-Text-SemiboldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-SemiboldItalic.otf"; sourceTree = "<group>"; };
@@ -93,9 +112,20 @@
 		F41C51C426C16ECD0061D188 /* SF-Pro-Text-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Heavy.otf"; sourceTree = "<group>"; };
 		F41C51C526C16ECE0061D188 /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
 		F41C51C726C16F4C0061D188 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		F482ADEE26C20995002DF570 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		F482ADF026C20A0E002DF570 /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		F4E4E41A26C18FFB00997754 /* OnboardingProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingProtocols.swift; sourceTree = "<group>"; };
 		F4E4E41C26C1916C00997754 /* OnboardingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPresenter.swift; sourceTree = "<group>"; };
 		F4E4E41E26C1918800997754 /* OnboardingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRouter.swift; sourceTree = "<group>"; };
+		F4E4E42726C1B0E400997754 /* HeadlinesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlinesVC.swift; sourceTree = "<group>"; };
+		F4E4E42826C1B0E400997754 /* HeadlinesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeadlinesVC.xib; sourceTree = "<group>"; };
+		F4E4E42B26C1BCA900997754 /* HeadlinesProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlinesProtocols.swift; sourceTree = "<group>"; };
+		F4E4E42D26C1BE3200997754 /* NewsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
+		F4E4E42F26C1C09A00997754 /* HeadlineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineCell.swift; sourceTree = "<group>"; };
+		F4E4E43026C1C09A00997754 /* HeadlineCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeadlineCell.xib; sourceTree = "<group>"; };
+		F4E4E43326C1C55500997754 /* HeadlinesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlinesPresenter.swift; sourceTree = "<group>"; };
+		F4E4E43526C1C75F00997754 /* HeadlinesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlinesInteractor.swift; sourceTree = "<group>"; };
+		F4E4E43726C1C98400997754 /* HeadlinesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlinesRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +175,7 @@
 				F41C517026C1660B0061D188 /* Network */,
 				F41C516F26C165F00061D188 /* Extensions */,
 				F41C516E26C165EA0061D188 /* Utilities */,
+				F482ADED26C2092B002DF570 /* Models */,
 				F41C516D26C165E70061D188 /* Core */,
 				F41C516C26C165DD0061D188 /* Scenes */,
 				F41C516426C165820061D188 /* Resources */,
@@ -209,8 +240,8 @@
 		F41C516C26C165DD0061D188 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				F4E4E42026C1A6B300997754 /* Headlines */,
 				F41C518126C16D5D0061D188 /* Onboarding */,
+				F4E4E42026C1A6B300997754 /* Headlines */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -228,9 +259,6 @@
 		F41C516E26C165EA0061D188 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				F41C519F26C16E3D0061D188 /* NibLoadingView.swift */,
-				F41C519D26C16E3D0061D188 /* SelfResizingCollectionView.swift */,
-				F41C519C26C16E3D0061D188 /* SelfResizingTableView.swift */,
 				F41C519E26C16E3D0061D188 /* UserDataManager.swift */,
 			);
 			path = Utilities;
@@ -239,8 +267,8 @@
 		F41C516F26C165F00061D188 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				F41C51A826C16E670061D188 /* Date+Extension.swift */,
-				F41C51A626C16E670061D188 /* UICollectionView+Extensions.swift */,
+				F482ADEE26C20995002DF570 /* String+Extension.swift */,
+				F482ADF026C20A0E002DF570 /* Date+Extension.swift */,
 				F41C51A926C16E670061D188 /* UIFont+Extension.swift */,
 				F41C51A426C16E670061D188 /* UIImageView+Extension.swift */,
 				F41C51A726C16E670061D188 /* UITableView+Extensions.swift */,
@@ -371,6 +399,14 @@
 			path = Animations;
 			sourceTree = "<group>";
 		};
+		F482ADED26C2092B002DF570 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F4E4E42D26C1BE3200997754 /* NewsModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		F4E4E42026C1A6B300997754 /* Headlines */ = {
 			isa = PBXGroup;
 			children = (
@@ -386,6 +422,9 @@
 		F4E4E42126C1A6C100997754 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F4E4E42726C1B0E400997754 /* HeadlinesVC.swift */,
+				F4E4E42826C1B0E400997754 /* HeadlinesVC.xib */,
+				F4E4E42626C1B0C300997754 /* HeadlineCell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -393,6 +432,7 @@
 		F4E4E42226C1A6C500997754 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				F4E4E43326C1C55500997754 /* HeadlinesPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -400,6 +440,7 @@
 		F4E4E42326C1A6C900997754 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				F4E4E43526C1C75F00997754 /* HeadlinesInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -407,6 +448,7 @@
 		F4E4E42426C1A6D000997754 /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				F4E4E43726C1C98400997754 /* HeadlinesRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -414,8 +456,18 @@
 		F4E4E42526C1A6D300997754 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				F4E4E42B26C1BCA900997754 /* HeadlinesProtocols.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		F4E4E42626C1B0C300997754 /* HeadlineCell */ = {
+			isa = PBXGroup;
+			children = (
+				F4E4E42F26C1C09A00997754 /* HeadlineCell.swift */,
+				F4E4E43026C1C09A00997754 /* HeadlineCell.xib */,
+			);
+			path = HeadlineCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -478,11 +530,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F482ADE726C205C7002DF570 /* SF-Pro-Text-MediumItalic.otf in Resources */,
+				F482ADE126C205C7002DF570 /* SF-Pro-Text-UltralightItalic.otf in Resources */,
 				F41C518A26C16D830061D188 /* OnboardingVC.xib in Resources */,
+				F482ADDC26C205C7002DF570 /* SF-Pro-Text-SemiboldItalic.otf in Resources */,
 				F41C517326C166DA0061D188 /* .swiftlint.yml in Resources */,
+				F482ADE826C205C7002DF570 /* SF-Pro-Text-Thin.otf in Resources */,
+				F482ADE326C205C7002DF570 /* SF-Pro-Text-Semibold.otf in Resources */,
+				F482ADDE26C205C7002DF570 /* SF-Pro-Text-Heavy.otf in Resources */,
+				F482ADDB26C205C7002DF570 /* SF-Pro-Text-RegularItalic.otf in Resources */,
+				F482ADE226C205C7002DF570 /* SF-Pro-Text-Regular.otf in Resources */,
+				F482ADE526C205C7002DF570 /* SF-Pro-Text-Bold.otf in Resources */,
+				F4E4E43226C1C09A00997754 /* HeadlineCell.xib in Resources */,
+				F482ADE626C205C7002DF570 /* SF-Pro-Text-BoldItalic.otf in Resources */,
+				F4E4E42A26C1B0E400997754 /* HeadlinesVC.xib in Resources */,
 				F41C516B26C165C40061D188 /* Colors.xcassets in Resources */,
+				F482ADE926C205C7002DF570 /* SF-Pro-Text-HeavyItalic.otf in Resources */,
+				F482ADDF26C205C7002DF570 /* SF-Pro-Text-Medium.otf in Resources */,
+				F482ADEA26C205C7002DF570 /* SF-Pro-Text-Light.otf in Resources */,
+				F482ADE426C205C7002DF570 /* SF-Pro-Text-ThinItalic.otf in Resources */,
+				F482ADEC26C205C7002DF570 /* SF-Pro-Text-BlackItalic.otf in Resources */,
 				5A7A54B526C144F30015CA43 /* LaunchScreen.storyboard in Resources */,
 				5A7A54B226C144F30015CA43 /* Icons.xcassets in Resources */,
+				F482ADE026C205C7002DF570 /* SF-Pro-Text-Ultralight.otf in Resources */,
+				F482ADEB26C205C7002DF570 /* SF-Pro-Text-LightItalic.otf in Resources */,
+				F482ADDD26C205C7002DF570 /* SF-Pro-Text-Black.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -553,31 +625,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F41C51AC26C16E670061D188 /* UICollectionView+Extensions.swift in Sources */,
 				F41C519A26C16DF10061D188 /* AlertDisplayer.swift in Sources */,
-				F41C51A326C16E3D0061D188 /* NibLoadingView.swift in Sources */,
 				F41C517B26C167E70061D188 /* NetworkManager.swift in Sources */,
+				F4E4E43826C1C98400997754 /* HeadlinesRouter.swift in Sources */,
 				F41C51A226C16E3D0061D188 /* UserDataManager.swift in Sources */,
 				F41C517F26C1685A0061D188 /* EndPointRouter.swift in Sources */,
+				F482ADF126C20A0E002DF570 /* Date+Extension.swift in Sources */,
 				F41C519826C16DF10061D188 /* ProgressDisplayer.swift in Sources */,
+				F4E4E43126C1C09A00997754 /* HeadlineCell.swift in Sources */,
 				F41C517926C167DB0061D188 /* APIResult.swift in Sources */,
 				F41C519326C16D9B0061D188 /* BaseWireframe.swift in Sources */,
-				F41C51A026C16E3D0061D188 /* SelfResizingTableView.swift in Sources */,
+				F4E4E42C26C1BCA900997754 /* HeadlinesProtocols.swift in Sources */,
 				F41C51AF26C16E670061D188 /* UIFont+Extension.swift in Sources */,
 				F41C517826C167DB0061D188 /* HTTPMethod.swift in Sources */,
 				F4E4E41B26C18FFB00997754 /* OnboardingProtocols.swift in Sources */,
-				F41C51AE26C16E670061D188 /* Date+Extension.swift in Sources */,
 				F41C517D26C168210061D188 /* NewsAPIEnvironmentPath.swift in Sources */,
 				F41C519926C16DF10061D188 /* Navbar.swift in Sources */,
 				F41C51AB26C16E670061D188 /* UIView+Extension.swift in Sources */,
-				F41C51A126C16E3D0061D188 /* SelfResizingCollectionView.swift in Sources */,
 				F41C51AD26C16E670061D188 /* UITableView+Extensions.swift in Sources */,
+				F4E4E43426C1C55500997754 /* HeadlinesPresenter.swift in Sources */,
 				5A7A54A926C144EE0015CA43 /* AppDelegate.swift in Sources */,
 				F41C518926C16D830061D188 /* OnboardingVC.swift in Sources */,
+				F4E4E42E26C1BE3200997754 /* NewsModel.swift in Sources */,
+				F4E4E42926C1B0E400997754 /* HeadlinesVC.swift in Sources */,
 				F41C51AA26C16E670061D188 /* UIImageView+Extension.swift in Sources */,
 				F4E4E41D26C1916C00997754 /* OnboardingPresenter.swift in Sources */,
+				F4E4E43626C1C75F00997754 /* HeadlinesInteractor.swift in Sources */,
 				F4E4E41F26C1918800997754 /* OnboardingRouter.swift in Sources */,
 				F41C51C826C16F4C0061D188 /* LoadingView.swift in Sources */,
+				F482ADEF26C20995002DF570 /* String+Extension.swift in Sources */,
 				F41B09A026C1858F0076211A /* MainRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
