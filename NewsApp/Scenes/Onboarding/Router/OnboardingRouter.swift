@@ -20,8 +20,12 @@ class OnboardingRouter: OnBoardingRouterProtocol {
         return view
     }
     
-    func navigateToHomeVC(from view: OnBoardingViewProtocol?) {
-        let homeVC = HeadlinesRouter.createModule(countryCode: "eg", categories: [.health, .business, .entertainment])
+    func navigateToHomeVC(
+        from view: OnBoardingViewProtocol?,
+        countryCode: String,
+        categories: [Categories]
+    ) {
+        let homeVC = HeadlinesRouter.createModule(countryCode: countryCode, categories: categories)
         if let viewController = view as? UIViewController {
             viewController.navigationController?.pushViewController(homeVC, animated: true)
         }

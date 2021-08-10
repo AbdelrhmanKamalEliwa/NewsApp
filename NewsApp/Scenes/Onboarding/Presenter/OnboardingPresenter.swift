@@ -62,15 +62,15 @@ class OnboardingPresenter: OnBoardingPresenterProtocol {
             return
         }
         
-        guard categories.count >= 3 else {
+        guard categories.count == 3 else {
             view?.showError(
                 with: "Select Categories",
-                message: "You should select at least 3 categories to start"
+                message: "You should select at least, no more, 3 categories to start"
             )
             return
         }
         
-        router.navigateToHomeVC(from: view)
+        router.navigateToHomeVC(from: view, countryCode: countryCode, categories: categories)
     }
     
     func didSelectCountry(with code: String) {

@@ -29,5 +29,9 @@ protocol OnBoardingPresenterProtocol: AnyObject {
 }
 
 protocol OnBoardingRouterProtocol {
-    func navigateToHomeVC(from view: OnBoardingViewProtocol?)
+    func navigateToHomeVC(
+        from view: OnBoardingViewProtocol?,
+        countryCode: String,
+        categories: [Categories]
+    )
 }

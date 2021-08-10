@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import SafariServices
 
 class HeadlinesRouter: HeadlinesRouterProtocol {
+    
     weak var viewController: UIViewController?
     
     static func createModule(countryCode: String, categories: [Categories]) -> UIViewController {
@@ -25,5 +27,12 @@ class HeadlinesRouter: HeadlinesRouterProtocol {
         interactor.presenter = presenter
         router.viewController = view
         return view
+    }
+    
+    func navigateToSafariVC(form view: HeadlinesViewProtocol?, with url: URL) {
+        let safariVC = SFSafariViewController(url: url)
+        if let viewController = view as? UIViewController {
+            viewController.present(safariVC, animated: true, completion: nil)
+        }
     }
 }

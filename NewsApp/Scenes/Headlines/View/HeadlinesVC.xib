@@ -41,16 +41,21 @@
                         <segment title="Category 3"/>
                     </segments>
                     <color key="selectedSegmentTintColor" name="AppYellow"/>
+                    <connections>
+                        <action selector="didTapSegmentedControl:" destination="-1" eventType="valueChanged" id="s8F-6U-qb5"/>
+                    </connections>
                 </segmentedControl>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Oaf-8W-i4k" secondAttribute="bottom" constant="30" id="68u-AS-qnh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Oaf-8W-i4k" secondAttribute="trailing" constant="20" id="7Wr-en-kSG"/>
                 <constraint firstItem="bMV-D0-y4P" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="9xD-yC-iRe"/>
                 <constraint firstItem="ksE-Ta-rVh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="VZf-UI-MqO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bMV-D0-y4P" secondAttribute="trailing" id="Ziz-j0-3LY"/>
                 <constraint firstItem="ksE-Ta-rVh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="nOa-Be-rse"/>
+                <constraint firstItem="Oaf-8W-i4k" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="nxF-74-GVd"/>
                 <constraint firstItem="Oaf-8W-i4k" firstAttribute="centerX" secondItem="bMV-D0-y4P" secondAttribute="centerX" id="ocQ-rc-kSJ"/>
                 <constraint firstItem="bMV-D0-y4P" firstAttribute="top" secondItem="ksE-Ta-rVh" secondAttribute="bottom" id="pie-0l-bK2"/>
                 <constraint firstAttribute="bottom" secondItem="bMV-D0-y4P" secondAttribute="bottom" id="qch-de-MYQ"/>

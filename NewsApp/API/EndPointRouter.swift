@@ -24,7 +24,8 @@ struct EndPointRouter {
     
     static func search(for text: String, sortBy: String) -> URL {
         let baseUrl: String = NewsAPIService.everything.baseURL()
-        let text: String = "q=" + text
+        let modelText: String = text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? text
+        let text: String = "q=" + modelText
         let sortBy: String = "&sortBy=" + sortBy
         let apiKey: String = "&apiKey=" + NewsAPIEnvironmentPath.development.apiKey()
         let url = URL(string: baseUrl + text + sortBy + apiKey)!

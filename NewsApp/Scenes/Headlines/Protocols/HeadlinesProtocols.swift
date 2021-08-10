@@ -31,17 +31,23 @@ protocol HeadlinesPresenterProtocol: AnyObject {
     func cellConfiguration(_ cell: HeadlineCellProtocol, for indexPath: IndexPath)
     func didSelectItem(at indexPath: IndexPath)
     func willDisplayCell(at indexPath: IndexPath)
-    func didTapSegmentedControl()
+    func didTapSegmentedControl(for title: String?)
+    func search(for text: String?)
+    func searchBarCancelButtonClicked()
 }
 
 protocol HeadlinesInteractorInputProtocol {
     var presenter: HeadlinesInteractorOutputProtocol? { get set }
-    func fetchData(text: String?, country: String, category: String, pageSize: Int, page: Int)
+    func fetchData(country: String, category: String, pageSize: Int, page: Int)
+    func search(for text: String)
 }
 
 protocol HeadlinesInteractorOutputProtocol: AnyObject {
     func dataFetchedSuccessfully(_ data: NewsModel)
+    func searchDataFetchedSuccessfully(_ data: NewsModel)
     func dataFetchingFailed(withError error: Error?)
 }
 
-protocol HeadlinesRouterProtocol { }
+protocol HeadlinesRouterProtocol {
+    func navigateToSafariVC(form view: HeadlinesViewProtocol?, with url: URL)
+}

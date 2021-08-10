@@ -84,7 +84,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="not.found" width="1024" height="1024"/>
+        <image name="not.found" width="512" height="512"/>
         <namedColor name="AppBlack">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

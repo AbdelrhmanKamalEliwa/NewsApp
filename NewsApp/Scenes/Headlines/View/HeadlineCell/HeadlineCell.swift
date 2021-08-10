@@ -30,6 +30,6 @@ extension HeadlineCell: HeadlineCellProtocol {
         titleLabel.text = model.title
         descriptionLabel.text = model.description
         sourceLabel.text = model.source.name
-        dateLabel.text = model.publishedAt
+        dateLabel.text = model.publishedAt?.convertToDate().convertToString()
     }
 }

@@ -26,6 +26,10 @@ class HeadlinesVC: BaseWireframe, CustomeNavbarProtocol {
         super.viewWillAppear(animated)
         presenter.viewWillAppear()
     }
+    
+    @IBAction func didTapSegmentedControl(_ sender: UISegmentedControl) {
+        presenter.didTapSegmentedControl(for: segmentedControl.titleForSegment(at: segmentedControl.selectedSegmentIndex))
+    }
 }
 
 // MARK: - Segmented Control Animation
@@ -44,21 +48,33 @@ extension HeadlinesVC {
 // MARK: - SearchBar
 extension HeadlinesVC: UISearchBarDelegate, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        presenter.search(for: textField.text)
         view.endEditing(true)
         return false
     }
     
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = true
+    }
+    
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        
+        searchBar.showsCancelButton = false
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.searchTextField.text = ""
+        view.endEditing(true)
+        presenter.searchBarCancelButtonClicked()
     }
 }
 
 // MARK: - Presenter Delegate
 extension HeadlinesVC: HeadlinesViewProtocol {
+    
     func setupSegmentedControll(with titles: [String]) {
-        segmentedControl.setTitle(titles[0], forSegmentAt: 0)
-        segmentedControl.setTitle(titles[1], forSegmentAt: 1)
-        segmentedControl.setTitle(titles[2], forSegmentAt: 2)
+        segmentedControl.setTitle(titles[0].lowercased(), forSegmentAt: 0)
+        segmentedControl.setTitle(titles[1].lowercased(), forSegmentAt: 1)
+        segmentedControl.setTitle(titles[2].lowercased(), forSegmentAt: 2)
     }
     
     func setupSearchBar() {
@@ -127,6 +143,22 @@ extension HeadlinesVC: UITableViewDelegate, UITableViewDataSource {
         _ tableView: UITableView,
         didSelectRowAt indexPath: IndexPath
     ) {
-        
+        presenter.didSelectItem(at: indexPath)
+    }
+    
+    func tableView(
+        _ tableView: UITableView,
+        leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath
+    ) -> UISwipeActionsConfiguration? {
+        let shareAction = UIContextualAction(
+            style: .normal,
+            title: "Add to favotite"
+        ) { (_: UIContextualAction, _: UIView, success: (Bool) -> Void) in
+            
+            success(true)
+        }
+        shareAction.image = UIImage(systemName: "bookmark")
+        shareAction.backgroundColor = UIColor(named: "AppYellow")
+        return UISwipeActionsConfiguration(actions: [shareAction])
     }
 }
