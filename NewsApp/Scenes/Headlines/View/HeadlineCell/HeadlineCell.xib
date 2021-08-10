@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Regular.otf">
+            <string>SFProText-Regular</string>
+        </array>
+        <array key="SF-Pro-Text-Semibold.otf">
+            <string>SFProText-Semibold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="286" id="KGk-i7-Jjw" customClass="HeadlineCell" customModule="NewsApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="298" height="286"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="298" height="286"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="not.found" translatesAutoresizingMaskIntoConstraints="NO" id="tqd-P6-gs0">
+                        <rect key="frame" x="0.0" y="0.0" width="298" height="150"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="150" id="umL-VL-vuR"/>
+                        </constraints>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="REb-uv-wWF">
+                        <rect key="frame" x="10" y="155" width="278" height="91"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udu-zl-YYN">
+                                <rect key="frame" x="0.0" y="0.0" width="278" height="22.5"/>
+                                <fontDescription key="fontDescription" name="SFProText-Semibold" family="SF Pro Text" pointSize="16"/>
+                                <color key="textColor" name="AppBlack"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0B8-Ny-ea3">
+                                <rect key="frame" x="0.0" y="27.5" width="278" height="19.5"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="16"/>
+                                <color key="textColor" name="AppBlack"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e67-V4-QIu">
+                                <rect key="frame" x="0.0" y="52" width="278" height="17"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
+                                <color key="textColor" name="AppBlack"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5p-ML-aiv">
+                                <rect key="frame" x="0.0" y="74" width="278" height="17"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="14"/>
+                                <color key="textColor" name="AppBlack"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="tqd-P6-gs0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="8VN-KO-Amp"/>
+                    <constraint firstAttribute="trailing" secondItem="tqd-P6-gs0" secondAttribute="trailing" id="EDS-2o-z2b"/>
+                    <constraint firstItem="tqd-P6-gs0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="F1O-e2-Aon"/>
+                    <constraint firstItem="REb-uv-wWF" firstAttribute="top" secondItem="tqd-P6-gs0" secondAttribute="bottom" constant="5" id="Kw6-NM-NaR"/>
+                    <constraint firstAttribute="trailing" secondItem="REb-uv-wWF" secondAttribute="trailing" constant="10" id="MGd-3h-SPZ"/>
+                    <constraint firstItem="REb-uv-wWF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="NAn-jZ-gfK"/>
+                    <constraint firstAttribute="bottom" secondItem="REb-uv-wWF" secondAttribute="bottom" constant="40" id="Nbc-Fg-YZw"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="dateLabel" destination="u5p-ML-aiv" id="pow-b6-pqH"/>
+                <outlet property="descriptionLabel" destination="0B8-Ny-ea3" id="TEn-Xf-rLK"/>
+                <outlet property="headlineImageView" destination="tqd-P6-gs0" id="n8j-sm-pIC"/>
+                <outlet property="sourceLabel" destination="e67-V4-QIu" id="a4t-o3-LMC"/>
+                <outlet property="titleLabel" destination="udu-zl-YYN" id="AiZ-nm-wL8"/>
+            </connections>
+            <point key="canvasLocation" x="-42.028985507246382" y="201.5625"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="not.found" width="1024" height="1024"/>
+        <namedColor name="AppBlack">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>
