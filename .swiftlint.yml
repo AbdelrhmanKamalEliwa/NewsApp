@@ -4,6 +4,7 @@ disabled_rules: # rule identifiers to exclude from running
 - notification_center_detachment
 - trailing_whitespace
 - identifier_name
+- unused_closure_parameter
 
 opt_in_rules:
 - empty_count
