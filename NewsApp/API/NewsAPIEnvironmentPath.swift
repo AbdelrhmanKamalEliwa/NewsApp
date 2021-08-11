@@ -26,21 +26,6 @@ enum NewsAPIService {
     }
 }
 
-//struct NewsAPIService {
-//    static func baseURL(for type: NewsAPIBaseURLTypes) -> String {
-//        switch type {
-//        case .headlines:
-//            return
-//                NewsAPIEnvironmentPath.development.scheme() +
-//                NewsAPIEnvironmentPath.development.host() + "/v2/" + type.rawValue
-//        case .everything:
-//            return
-//                NewsAPIEnvironmentPath.development.scheme() +
-//                NewsAPIEnvironmentPath.development.host() + "/v2/" + type.rawValue
-//        }
-//    }
-//}
-
 enum NewsAPIEnvironmentPath {
     
     case development

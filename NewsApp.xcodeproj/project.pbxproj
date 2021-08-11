@@ -30,7 +30,6 @@
 		F41C51AB26C16E670061D188 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C51A526C16E670061D188 /* UIView+Extension.swift */; };
 		F41C51AD26C16E670061D188 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C51A726C16E670061D188 /* UITableView+Extensions.swift */; };
 		F41C51AF26C16E670061D188 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C51A926C16E670061D188 /* UIFont+Extension.swift */; };
-		F41C51C826C16F4C0061D188 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C51C726C16F4C0061D188 /* LoadingView.swift */; };
 		F482ADDB26C205C7002DF570 /* SF-Pro-Text-RegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F41C51C126C16ECD0061D188 /* SF-Pro-Text-RegularItalic.otf */; };
 		F482ADDC26C205C7002DF570 /* SF-Pro-Text-SemiboldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F41C51B526C16ECB0061D188 /* SF-Pro-Text-SemiboldItalic.otf */; };
 		F482ADDD26C205C7002DF570 /* SF-Pro-Text-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = F41C51BE26C16ECC0061D188 /* SF-Pro-Text-Black.otf */; };
@@ -117,7 +116,6 @@
 		F41C51C326C16ECD0061D188 /* SF-Pro-Text-UltralightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-UltralightItalic.otf"; sourceTree = "<group>"; };
 		F41C51C426C16ECD0061D188 /* SF-Pro-Text-Heavy.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Heavy.otf"; sourceTree = "<group>"; };
 		F41C51C526C16ECE0061D188 /* SF-Pro-Text-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Medium.otf"; sourceTree = "<group>"; };
-		F41C51C726C16F4C0061D188 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		F482ADEE26C20995002DF570 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		F482ADF026C20A0E002DF570 /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		F4AB326026C390A5009C74A8 /* NewsApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NewsApp.xcdatamodel; sourceTree = "<group>"; };
@@ -255,6 +253,7 @@
 			children = (
 				F41C518126C16D5D0061D188 /* Onboarding */,
 				F4E4E42026C1A6B300997754 /* Headlines */,
+				F4EB1F7326C3C1A000912F20 /* Favorites */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -364,7 +363,6 @@
 		F41C519B26C16DF20061D188 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				F41C51C726C16F4C0061D188 /* LoadingView.swift */,
 				F41C519726C16DF10061D188 /* AlertDisplayer.swift */,
 				F41C519626C16DF10061D188 /* Navbar.swift */,
 				F41C519526C16DF00061D188 /* ProgressDisplayer.swift */,
@@ -510,6 +508,45 @@
 				F4E4E43026C1C09A00997754 /* HeadlineCell.xib */,
 			);
 			path = HeadlineCell;
+			sourceTree = "<group>";
+		};
+		F4EB1F7326C3C1A000912F20 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				F4EB1F7826C3C1C200912F20 /* Protocols */,
+				F4EB1F7626C3C1B000912F20 /* Router */,
+				F4EB1F7526C3C1A900912F20 /* Prersenter */,
+				F4EB1F7426C3C1A600912F20 /* View */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		F4EB1F7426C3C1A600912F20 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F4EB1F7526C3C1A900912F20 /* Prersenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Prersenter;
+			sourceTree = "<group>";
+		};
+		F4EB1F7626C3C1B000912F20 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		F4EB1F7826C3C1C200912F20 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -699,7 +736,6 @@
 				F4E4E41D26C1916C00997754 /* OnboardingPresenter.swift in Sources */,
 				F4E4E43626C1C75F00997754 /* HeadlinesInteractor.swift in Sources */,
 				F4E4E41F26C1918800997754 /* OnboardingRouter.swift in Sources */,
-				F41C51C826C16F4C0061D188 /* LoadingView.swift in Sources */,
 				F482ADEF26C20995002DF570 /* String+Extension.swift in Sources */,
 				F4AB328126C3950C009C74A8 /* Articles+CoreDataClass.swift in Sources */,
 				F41B09A026C1858F0076211A /* MainRouter.swift in Sources */,
