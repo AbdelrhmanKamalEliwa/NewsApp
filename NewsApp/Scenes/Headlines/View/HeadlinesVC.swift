@@ -12,6 +12,7 @@ class HeadlinesVC: BaseWireframe, CustomeNavbarProtocol {
     // MARK: - Properties
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet weak var tableViewTopConstraint: NSLayoutConstraint!
     @IBOutlet private weak var segmentedControl: UISegmentedControl!
     @IBOutlet private weak var segmentedControlBottomConstraint: NSLayoutConstraint!
     var presenter: HeadlinesPresenterProtocol!
@@ -42,13 +43,17 @@ class HeadlinesVC: BaseWireframe, CustomeNavbarProtocol {
     }
 }
 
-// MARK: - Segmented Control Animation
+// MARK: - Scrolling Animation
 extension HeadlinesVC {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if tableView.panGestureRecognizer.translation(in: self.view).y < 0 {
+            searchBar.isHidden = true
+            tableViewTopConstraint.constant = 0
             segmentedControlBottomConstraint.constant = -100
             UIView.animate(withDuration: 0.5) { self.view.layoutIfNeeded() }
         } else {
+            searchBar.isHidden = false
+            tableViewTopConstraint.constant = 60
             segmentedControlBottomConstraint.constant = 20
             UIView.animate(withDuration: 0.5) { self.view.layoutIfNeeded() }
         }
