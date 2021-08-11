@@ -27,8 +27,18 @@ class HeadlinesVC: BaseWireframe, CustomeNavbarProtocol {
         presenter.viewWillAppear()
     }
     
-    @IBAction func didTapSegmentedControl(_ sender: UISegmentedControl) {
+    @IBAction private func didTapSegmentedControl(_ sender: UISegmentedControl) {
         presenter.didTapSegmentedControl(for: segmentedControl.titleForSegment(at: segmentedControl.selectedSegmentIndex))
+    }
+    
+    @objc
+    private func didTapLocalizationButton() {
+        
+    }
+    
+    @objc
+    private func didTapFavoritesButton() {
+        
     }
 }
 
@@ -83,7 +93,23 @@ extension HeadlinesVC: HeadlinesViewProtocol {
     }
     
     func setupNavbar() {
-        setupCustomeNavbar(with: "Headlines")
+        let leftBarButtonItem: UIBarButtonItem = UIBarButtonItem(
+            title: "AR",
+            style: .done,
+            target: self,
+            action: #selector(didTapLocalizationButton)
+        )
+        let rightBarButtonItem: UIBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: "bookmark"),
+            style: .done,
+            target: self,
+            action: #selector(didTapFavoritesButton)
+        )
+        setupCustomeNavbar(
+            with: "Headlines",
+            leftbarButtonItems: [leftBarButtonItem],
+            rightbarButtonItems: [rightBarButtonItem]
+        )
     }
     
     func fetchDataSuccess() {

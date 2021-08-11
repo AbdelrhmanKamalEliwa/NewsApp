@@ -24,7 +24,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="ksE-Ta-rVh">
+                <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search for any article ..." translatesAutoresizingMaskIntoConstraints="NO" id="ksE-Ta-rVh">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="51"/>
                     <textInputTraits key="textInputTraits"/>
                 </searchBar>

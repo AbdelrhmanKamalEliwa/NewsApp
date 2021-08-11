@@ -49,10 +49,10 @@ extension CustomeNavbarProtocol where Self: UIViewController {
         navigationItem.title = title
         
         navigationItem.leftBarButtonItems = leftbarButtonItems
-        navigationItem.leftBarButtonItem?.tintColor = UIColor(named: "AppWhite")!
+        navigationItem.leftBarButtonItem?.tintColor = UIColor(named: "AppYellow")!
         
         navigationItem.rightBarButtonItems = rightbarButtonItems
-        navigationItem.rightBarButtonItem?.tintColor = UIColor(named: "AppWhite")!
+        navigationItem.rightBarButtonItem?.tintColor = UIColor(named: "AppYellow")!
     }
     
     func hideCustomeNavbar() {
