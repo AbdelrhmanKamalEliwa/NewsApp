@@ -87,9 +87,9 @@ extension HeadlinesVC: UISearchBarDelegate, UITextFieldDelegate {
 extension HeadlinesVC: HeadlinesViewProtocol {
     
     func setupSegmentedControll(with titles: [String]) {
-        segmentedControl.setTitle(titles[0].lowercased(), forSegmentAt: 0)
-        segmentedControl.setTitle(titles[1].lowercased(), forSegmentAt: 1)
-        segmentedControl.setTitle(titles[2].lowercased(), forSegmentAt: 2)
+        segmentedControl.setTitle(titles[0].capitalizingFirstLetter(), forSegmentAt: 0)
+        segmentedControl.setTitle(titles[1].capitalizingFirstLetter(), forSegmentAt: 1)
+        segmentedControl.setTitle(titles[2].capitalizingFirstLetter(), forSegmentAt: 2)
     }
     
     func setupSearchBar() {

@@ -41,7 +41,7 @@ extension CustomeNavbarProtocol where Self: UIViewController {
         navbar?.shadowImage = UIImage()
         navbar?.prefersLargeTitles = false
         navbar?.titleTextAttributes = [
-            NSAttributedString.Key.font: UIFont.sfProText(.semiBold, ofSize: 14),
+            NSAttributedString.Key.font: UIFont.sfProText(.semiBold, ofSize: 18),
             NSAttributedString.Key.foregroundColor: UIColor(named: "AppBlack")!
         ]
         navbar?.tintColor = UIColor(named: "AppBlack")!
