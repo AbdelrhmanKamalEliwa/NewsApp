@@ -17,6 +17,8 @@ protocol HeadlinesViewProtocol: AnyObject {
     func showLoadingAnimation()
     func hideLoadingAnimation()
     func showError(with title: String, message: String)
+    func updateUIForInternetConnection(_ isConnected: Bool)
+    func animateUI(_ status: Bool)
 }
 
 protocol HeadlineCellProtocol {
@@ -34,18 +36,24 @@ protocol HeadlinesPresenterProtocol: AnyObject {
     func didTapSegmentedControl(for title: String?)
     func search(for text: String?)
     func searchBarCancelButtonClicked()
+    func scrollViewDidScroll(status: Bool)
 }
 
 protocol HeadlinesInteractorInputProtocol {
     var presenter: HeadlinesInteractorOutputProtocol? { get set }
     func fetchData(country: String, category: String, pageSize: Int, page: Int)
     func search(for text: String)
+    func cacheData(_ data: [ArticleModel], pageIndex: Int)
+    func loadCachedData()
 }
 
 protocol HeadlinesInteractorOutputProtocol: AnyObject {
     func dataFetchedSuccessfully(_ data: NewsModel)
     func searchDataFetchedSuccessfully(_ data: NewsModel)
     func dataFetchingFailed(withError error: Error?)
+    func noInternetConnection()
+    func coreDataResponseSuccessfully(_ data: [Articles]?)
+    func coreDataResponseFailed(_ error: Error?)
 }
 
 protocol HeadlinesRouterProtocol {

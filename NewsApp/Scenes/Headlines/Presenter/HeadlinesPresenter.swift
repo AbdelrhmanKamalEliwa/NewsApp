@@ -16,20 +16,19 @@ class HeadlinesPresenter: HeadlinesPresenterProtocol {
     private let countryCode: String
     private let categories: [Categories]
     private var category: String = ""
-    private var data: NewsModel?
+    private var cachedData: [Articles] = []
     private var searchData: NewsModel?
     private var totalCount: Int = 0
-    private var dataSource: [ArticleModel] {
-        data?.articles ?? []
-    }
+    private var dataSource: [ArticleModel] = []
     private var searchDataSource: [ArticleModel] {
         searchData?.articles ?? []
     }
     private var pageSize: Int = 20
     private var page: Int = 1
     private var isSearching: Bool = false
+    private var cacheStatus: Bool = false
     var numberOfRows: Int {
-        dataSource.count
+        cacheStatus ? cachedData.count : dataSource.count
     }
     
     // MARK: - Init
@@ -61,13 +60,33 @@ class HeadlinesPresenter: HeadlinesPresenterProtocol {
     }
     
     func cellConfiguration(_ cell: HeadlineCellProtocol, for indexPath: IndexPath) {
-        var model: ArticleModel?
-        model = isSearching ? searchDataSource[indexPath.row] : dataSource[indexPath.row]
-        guard let model = model else { return }
-        cell.configure(model: model)
+        if cacheStatus {
+            let cachedModel = cachedData[indexPath.row]
+            let model: ArticleModel = ArticleModel(
+                source: SourceModel(id: nil, name: cachedModel.source),
+                title: cachedModel.title,
+                description: cachedModel.articleDescription,
+                urlToImage: cachedModel.urlToImage,
+                publishedAt: cachedModel.publishedAt,
+                url: cachedModel.url
+            )
+            cell.configure(model: model)
+        } else {
+            var model: ArticleModel?
+            model = isSearching ? searchDataSource[indexPath.row] : dataSource[indexPath.row]
+            guard let model = model else { return }
+            cell.configure(model: model)
+        }
     }
     
     func didSelectItem(at indexPath: IndexPath) {
+        guard !cacheStatus else {
+            view?.showError(
+                with: "No Internet Connection",
+                message: "Please check your internet connection and try again"
+            )
+            return
+        }
         var model: ArticleModel?
         model = isSearching ? searchDataSource[indexPath.row] : dataSource[indexPath.row]
         guard
@@ -87,7 +106,7 @@ class HeadlinesPresenter: HeadlinesPresenterProtocol {
     }
     
     func willDisplayCell(at indexPath: IndexPath) {
-        guard !isSearching else { return }
+        guard !isSearching, !cacheStatus else { return }
         guard
             dataSource.count < totalCount, indexPath.row >= dataSource.count - 1
         else { return }
@@ -110,6 +129,10 @@ class HeadlinesPresenter: HeadlinesPresenterProtocol {
     func searchBarCancelButtonClicked() {
         isSearching = false
         view?.fetchDataSuccess()
+    }
+    
+    func scrollViewDidScroll(status: Bool) {
+        view?.animateUI(status)
     }
     
     private func fetchData() {
@@ -148,21 +171,42 @@ class HeadlinesPresenter: HeadlinesPresenterProtocol {
 
 // MARK: - Interactor Response
 extension HeadlinesPresenter: HeadlinesInteractorOutputProtocol {
+   
     func searchDataFetchedSuccessfully(_ data: NewsModel) {
         view?.hideLoadingAnimation()
-        self.searchData = data
+        searchData = data
         view?.fetchDataSuccess()
     }
     
     func dataFetchedSuccessfully(_ data: NewsModel) {
         view?.hideLoadingAnimation()
-        if !data.articles.isEmpty { self.data = data }
+        if !data.articles.isEmpty {
+            dataSource.append(contentsOf: data.articles)
+        }
         self.totalCount = data.totalResults
+        cacheStatus = false
+        interactor.cacheData(data.articles, pageIndex: page)
         view?.fetchDataSuccess()
     }
     
     func dataFetchingFailed(withError error: Error?) {
         view?.hideLoadingAnimation()
         view?.showError(with: "Error", message: error?.localizedDescription ?? "")
+    }
+    
+    func noInternetConnection() {
+        view?.updateUIForInternetConnection(false)
+        cacheStatus = true
+        interactor.loadCachedData()
+    }
+    
+    func coreDataResponseSuccessfully(_ data: [Articles]?) {
+        cachedData = data ?? []
+        view?.fetchDataSuccess()
+    }
+    
+    func coreDataResponseFailed(_ error: Error?) {
+        guard let error = error else { return }
+        view?.showError(with: "Error", message: error.localizedDescription)
     }
 }

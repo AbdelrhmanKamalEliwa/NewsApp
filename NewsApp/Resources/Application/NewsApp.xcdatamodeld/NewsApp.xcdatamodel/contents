@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20E241" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Articles" representedClassName="Articles" syncable="YES">
+        <attribute name="articleDescription" optional="YES" attributeType="String"/>
+        <attribute name="publishedAt" optional="YES" attributeType="String"/>
+        <attribute name="source" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+        <attribute name="urlToImage" optional="YES" attributeType="String"/>
+        <relationship name="favorite" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FavoriteArticles" inverseName="articles" inverseEntity="FavoriteArticles"/>
+    </entity>
+    <entity name="FavoriteArticles" representedClassName="FavoriteArticles" syncable="YES">
+        <attribute name="articleId" optional="YES" attributeType="String"/>
+        <relationship name="articles" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Articles" inverseName="favorite" inverseEntity="Articles"/>
+    </entity>
+    <elements>
+        <element name="Articles" positionX="-63" positionY="-18" width="128" height="134"/>
+        <element name="FavoriteArticles" positionX="-54" positionY="36" width="128" height="59"/>
+    </elements>
+</model>

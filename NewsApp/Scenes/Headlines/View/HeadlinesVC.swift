@@ -46,17 +46,18 @@ class HeadlinesVC: BaseWireframe, CustomeNavbarProtocol {
 // MARK: - Scrolling Animation
 extension HeadlinesVC {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if tableView.panGestureRecognizer.translation(in: self.view).y < 0 {
-            searchBar.isHidden = true
-            tableViewTopConstraint.constant = 0
-            segmentedControlBottomConstraint.constant = -100
-            UIView.animate(withDuration: 0.5) { self.view.layoutIfNeeded() }
-        } else {
-            searchBar.isHidden = false
-            tableViewTopConstraint.constant = 60
-            segmentedControlBottomConstraint.constant = 20
-            UIView.animate(withDuration: 0.5) { self.view.layoutIfNeeded() }
-        }
+        presenter.scrollViewDidScroll(status: tableView.panGestureRecognizer.translation(in: view).y < 0)
+//        if tableView.panGestureRecognizer.translation(in: view).y < 0 {
+//            searchBar.isHidden = true
+//            tableViewTopConstraint.constant = 0
+//            segmentedControlBottomConstraint.constant = -100
+//            UIView.animate(withDuration: 0.5) { self.view.layoutIfNeeded() }
+//        } else {
+//            searchBar.isHidden = false
+//            tableViewTopConstraint.constant = 60
+//            segmentedControlBottomConstraint.constant = 20
+//            UIView.animate(withDuration: 0.5) { self.view.layoutIfNeeded() }
+//        }
     }
 }
 
@@ -85,6 +86,18 @@ extension HeadlinesVC: UISearchBarDelegate, UITextFieldDelegate {
 
 // MARK: - Presenter Delegate
 extension HeadlinesVC: HeadlinesViewProtocol {
+    func animateUI(_ status: Bool) {
+        searchBar.isHidden = status
+        tableViewTopConstraint.constant = status ? 0 : 60
+        segmentedControlBottomConstraint.constant = status ? -100 : 20
+        UIView.animate(withDuration: 0.5) { self.view.layoutIfNeeded() }
+    }
+    
+    func updateUIForInternetConnection(_ isConnected: Bool) {
+        DispatchQueue.main.async {
+            self.segmentedControl.isHidden = !isConnected
+        }
+    }
     
     func setupSegmentedControll(with titles: [String]) {
         segmentedControl.setTitle(titles[0].capitalizingFirstLetter(), forSegmentAt: 0)

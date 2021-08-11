@@ -11,6 +11,7 @@ class HeadlinesInteractor: HeadlinesInteractorInputProtocol {
     
     weak var presenter: HeadlinesInteractorOutputProtocol?
     private let networkManager = NetworkManager()
+    private let coreDataManager = CoreDataManager()
     
     func fetchData(country: String, category: String, pageSize: Int, page: Int) {
         let url: URL = EndPointRouter.getHeadlines(
@@ -32,6 +33,7 @@ class HeadlinesInteractor: HeadlinesInteractorInputProtocol {
                 self.presenter?.dataFetchedSuccessfully(data)
             case .failure(let error):
                 self.presenter?.dataFetchingFailed(withError: error)
+                self.presenter?.noInternetConnection()
             case .decodingFailure(let error):
                 self.presenter?.dataFetchingFailed(withError: error)
             case .badRequest(let error):
@@ -61,4 +63,23 @@ class HeadlinesInteractor: HeadlinesInteractorInputProtocol {
             }
         }
     }
+    
+    func cacheData(_ data: [ArticleModel], pageIndex: Int) {
+        DispatchQueue.main.async {
+            let error = self.coreDataManager.cachArticlesData(data, pageIndex: pageIndex)
+            self.presenter?.coreDataResponseFailed(error)
+        }
+    }
+    
+    func loadCachedData() {
+        DispatchQueue.main.async {
+            let result = self.coreDataManager.loadArticles()
+            if let data = result.0 {
+                self.presenter?.coreDataResponseSuccessfully(data)
+            } else {
+                self.presenter?.coreDataResponseFailed(result.1)
+            }
+        }
+    }
+    
 }
