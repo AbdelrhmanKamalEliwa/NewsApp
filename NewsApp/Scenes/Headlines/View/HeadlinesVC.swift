@@ -12,9 +12,10 @@ class HeadlinesVC: BaseWireframe, CustomeNavbarProtocol {
     // MARK: - Properties
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet weak var tableViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet private weak var tableViewTopConstraint: NSLayoutConstraint!
     @IBOutlet private weak var segmentedControl: UISegmentedControl!
     @IBOutlet private weak var segmentedControlBottomConstraint: NSLayoutConstraint!
+    private let refreshControl = UIRefreshControl()
     var presenter: HeadlinesPresenterProtocol!
     
     // MARK: - Lifecycle
@@ -28,6 +29,7 @@ class HeadlinesVC: BaseWireframe, CustomeNavbarProtocol {
         presenter.viewWillAppear()
     }
     
+    // MARK: - Methods
     @IBAction private func didTapSegmentedControl(_ sender: UISegmentedControl) {
         presenter.didTapSegmentedControl(for: segmentedControl.titleForSegment(at: segmentedControl.selectedSegmentIndex))
     }
@@ -41,23 +43,19 @@ class HeadlinesVC: BaseWireframe, CustomeNavbarProtocol {
     private func didTapFavoritesButton() {
         
     }
+    
+    @objc private func refresh(_ sender: AnyObject) {
+        presenter.refreshData()
+        refreshControl.endRefreshing()
+    }
 }
 
 // MARK: - Scrolling Animation
 extension HeadlinesVC {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        presenter.scrollViewDidScroll(status: tableView.panGestureRecognizer.translation(in: view).y < 0)
-//        if tableView.panGestureRecognizer.translation(in: view).y < 0 {
-//            searchBar.isHidden = true
-//            tableViewTopConstraint.constant = 0
-//            segmentedControlBottomConstraint.constant = -100
-//            UIView.animate(withDuration: 0.5) { self.view.layoutIfNeeded() }
-//        } else {
-//            searchBar.isHidden = false
-//            tableViewTopConstraint.constant = 60
-//            segmentedControlBottomConstraint.constant = 20
-//            UIView.animate(withDuration: 0.5) { self.view.layoutIfNeeded() }
-//        }
+        presenter.scrollViewDidScroll(
+            status: tableView.panGestureRecognizer.translation(in: view).y < 0
+        )
     }
 }
 
@@ -108,6 +106,12 @@ extension HeadlinesVC: HeadlinesViewProtocol {
     func setupSearchBar() {
         searchBar.delegate = self
         searchBar.searchTextField.delegate = self
+    }
+    
+    func setupRefreshController() {
+        refreshControl.attributedTitle = NSAttributedString(string: "Refresh")
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        tableView.addSubview(refreshControl)
     }
     
     func setupNavbar() {

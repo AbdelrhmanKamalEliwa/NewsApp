@@ -13,6 +13,7 @@ protocol HeadlinesViewProtocol: AnyObject {
     func setupSearchBar()
     func setupNavbar()
     func setupTableView()
+    func setupRefreshController()
     func fetchDataSuccess()
     func showLoadingAnimation()
     func hideLoadingAnimation()
@@ -37,6 +38,7 @@ protocol HeadlinesPresenterProtocol: AnyObject {
     func search(for text: String?)
     func searchBarCancelButtonClicked()
     func scrollViewDidScroll(status: Bool)
+    func refreshData()
 }
 
 protocol HeadlinesInteractorInputProtocol {

@@ -52,6 +52,7 @@ class HeadlinesPresenter: HeadlinesPresenterProtocol {
         view?.setupSegmentedControll(with: getCategoriesTitles())
         view?.setupSearchBar()
         view?.setupTableView()
+        view?.setupRefreshController()
         fetchData()
     }
     
@@ -133,6 +134,11 @@ class HeadlinesPresenter: HeadlinesPresenterProtocol {
     
     func scrollViewDidScroll(status: Bool) {
         view?.animateUI(status)
+    }
+    
+    func refreshData() {
+        page = 1
+        fetchData()
     }
     
     private func fetchData() {
