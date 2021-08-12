@@ -23,6 +23,7 @@ protocol FavoritesPresenterProtocol: AnyObject {
     func viewWillAppear()
     func cellConfiguration(_ cell: HeadlineCellProtocol, for indexPath: IndexPath)
     func didSwipeToRemoveArticle(at indexPath: IndexPath)
+    func didSelectItem(at indexPath: IndexPath)
 }
 
 protocol FavoritesInteractorInputProtocol {
@@ -39,6 +40,5 @@ protocol FavoritesInteractorOutputProtocol: AnyObject {
 }
 
 protocol FavoritesRouterProtocol {
-    func presentSafariVC(form view: HeadlinesViewProtocol?, with url: URL)
-    func dismiss(_ view: FavoritesViewProtocol?)
+    func presentSafariVC(form view: FavoritesViewProtocol?, with url: URL)
 }

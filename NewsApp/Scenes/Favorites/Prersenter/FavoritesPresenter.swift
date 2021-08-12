@@ -62,6 +62,16 @@ class FavoritesPresenter: FavoritesPresenterProtocol {
         interactor.deleteArticle(articleId)
     }
     
+    func didSelectItem(at indexPath: IndexPath) {
+        guard
+            let stringUrl = dataSource[indexPath.row].url,
+            let url = URL(string: stringUrl) else {
+            view?.showError(with: "Invalid URL", message: "Can't open the atricle on Safari")
+            return
+        }
+        router.presentSafariVC(form: view, with: url)
+    }
+    
     private func fetchData() {
         interactor.fetchFavorites()
     }

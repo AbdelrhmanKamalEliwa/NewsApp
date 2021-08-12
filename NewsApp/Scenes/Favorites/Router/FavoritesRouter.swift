@@ -27,17 +27,10 @@ class FavoritesRouter: FavoritesRouterProtocol {
         return view
     }
     
-    func presentSafariVC(form view: HeadlinesViewProtocol?, with url: URL) {
+    func presentSafariVC(form view: FavoritesViewProtocol?, with url: URL) {
         let safariVC = SFSafariViewController(url: url)
         if let viewController = view as? UIViewController {
             viewController.present(safariVC, animated: true, completion: nil)
         }
     }
-    
-    func dismiss(_ view: FavoritesViewProtocol?) {
-        if let viewController = view as? UIViewController {
-            viewController.dismiss(animated: true)
-        }
-    }
-    
 }

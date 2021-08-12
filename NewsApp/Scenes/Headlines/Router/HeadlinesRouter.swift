@@ -36,7 +36,7 @@ class HeadlinesRouter: HeadlinesRouterProtocol {
         }
     }
     
-    func presentFavoritesVC(from view: HeadlinesViewProtocol?) {
+    func navigateToFavoritesVC(from view: HeadlinesViewProtocol?) {
         let favoritesVC = FavoritesRouter.createModule()
         if let viewController = view as? UIViewController {
             viewController.navigationController?.pushViewController(favoritesVC, animated: true)

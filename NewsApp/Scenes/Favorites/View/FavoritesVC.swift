@@ -78,6 +78,13 @@ extension FavoritesVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(
         _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath
+    ) {
+        presenter.didSelectItem(at: indexPath)
+    }
+    
+    func tableView(
+        _ tableView: UITableView,
         commit editingStyle: UITableViewCell.EditingStyle,
         forRowAt indexPath: IndexPath
     ) {

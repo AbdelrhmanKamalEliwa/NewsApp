@@ -143,7 +143,7 @@ class HeadlinesPresenter: HeadlinesPresenterProtocol {
     }
     
     func didTapFavoritesButton() {
-        router.presentFavoritesVC(from: view)
+        router.navigateToFavoritesVC(from: view)
     }
     
     func didSwipeToAddToFavorites(at indexPath: IndexPath) {

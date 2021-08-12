@@ -64,5 +64,5 @@ protocol HeadlinesInteractorOutputProtocol: AnyObject {
 
 protocol HeadlinesRouterProtocol {
     func presentSafariVC(form view: HeadlinesViewProtocol?, with url: URL)
-    func presentFavoritesVC(from view: HeadlinesViewProtocol?)
+    func navigateToFavoritesVC(from view: HeadlinesViewProtocol?)
 }
