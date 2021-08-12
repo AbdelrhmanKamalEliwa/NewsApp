@@ -13,7 +13,7 @@ class HeadlinesInteractor: HeadlinesInteractorInputProtocol {
     private let networkManager = NetworkManager()
     private let coreDataManager = CoreDataManager()
     
-    func fetchData(country: String, category: String, pageSize: Int, page: Int) {
+    func fetchData(country: String, category: String, pageSize: Int, page: Int, isPaginated: Bool) {
         let url: URL = EndPointRouter.getHeadlines(
             country: country,
             category: category,
@@ -30,7 +30,7 @@ class HeadlinesInteractor: HeadlinesInteractorInputProtocol {
             guard let self = self else { return }
             switch result {
             case .success(let data):
-                self.presenter?.dataFetchedSuccessfully(data)
+                self.presenter?.dataFetchedSuccessfully(data, isPaginated: isPaginated)
             case .failure(let error):
                 self.presenter?.dataFetchingFailed(withError: error)
                 self.presenter?.noInternetConnection()
@@ -82,4 +82,14 @@ class HeadlinesInteractor: HeadlinesInteractorInputProtocol {
         }
     }
     
+    func addToFavorites(_ article: ArticleModel, articleId: String) {
+        DispatchQueue.main.async {
+            let error = self.coreDataManager.saveToFavorite(article, articleId: articleId)
+            if let error = error {
+                self.presenter?.coreDataResponseFailed(error)
+            } else {
+                self.presenter?.articleAddedToFavoritesSuccessfully()
+            }
+        }
+    }
 }

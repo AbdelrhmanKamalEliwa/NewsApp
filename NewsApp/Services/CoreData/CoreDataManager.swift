@@ -36,6 +36,20 @@ class CoreDataManager {
         }
     }
     
+    /// This function helps you to load the cached atricles
+    /// - Returns: optional list of Articles and optional Error
+    func loadFavoriteArticles() -> ([FavoriteArticles]?, Error?) {
+        guard let managedContext = managedContext else { return (nil, nil) }
+        let fetchRequest = NSFetchRequest<FavoriteArticles>(entityName: "FavoriteArticles")
+        do {
+            let articles = try managedContext.fetch(fetchRequest)
+            return (articles, nil)
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+            return (nil, error)
+        }
+    }
+    
     /// This function helps you to cache atricles
     /// - Parameters:
     ///   - articles: array of Articles
@@ -89,6 +103,30 @@ class CoreDataManager {
         }
     }
     
+    /// This function helps you to save atricle to favorites
+    /// - Parameter article: Articles object
+    /// - Returns: optional Error
+    func saveToFavorite(_ article: ArticleModel, articleId: String) -> Error? {
+        guard let managedContext = managedContext else { return nil }
+        let newArticle = NSEntityDescription.insertNewObject(
+            forEntityName: "FavoriteArticles", into: managedContext
+        )
+        newArticle.setValue(articleId, forKey: "articleId")
+        newArticle.setValue(article.title, forKeyPath: "title")
+        newArticle.setValue(article.description, forKeyPath: "articleDescription")
+        newArticle.setValue(article.source.name, forKeyPath: "source")
+        newArticle.setValue(article.publishedAt, forKeyPath: "publishedAt")
+        newArticle.setValue(article.urlToImage, forKeyPath: "urlToImage")
+        newArticle.setValue(article.url, forKeyPath: "url")
+        do {
+            try managedContext.save()
+            return nil
+        } catch {
+            print(error)
+            return error
+        }
+    }
+    
     /// This function helps you to update cached atricles
     /// - Parameter articles: array of Articles
     /// - Returns: optional Error
@@ -111,6 +149,21 @@ class CoreDataManager {
         } catch {
             print(error)
             return error
+        }
+    }
+    
+    func deleteArticleFromFavorites(for articleId: String) -> (String?, Error?) {
+        guard let managedContext = managedContext else { return (nil, nil) }
+        let fetchRequest = NSFetchRequest<FavoriteArticles>(entityName: "FavoriteArticles")
+        fetchRequest.predicate = NSPredicate(format: "articleId = '\(articleId)'")
+        do {
+            let articles = try managedContext.fetch(fetchRequest)
+            articles.forEach({managedContext.delete($0)})
+            try managedContext.save()
+            return (articleId, nil)
+        } catch let error as NSError {
+            print("Could not fetch. \(error), \(error.userInfo)")
+            return (nil, error)
         }
     }
 }

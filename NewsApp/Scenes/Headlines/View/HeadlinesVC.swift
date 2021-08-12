@@ -41,7 +41,7 @@ class HeadlinesVC: BaseWireframe, CustomeNavbarProtocol {
     
     @objc
     private func didTapFavoritesButton() {
-        
+        presenter.didTapFavoritesButton()
     }
     
     @objc private func refresh(_ sender: AnyObject) {
@@ -202,7 +202,7 @@ extension HeadlinesVC: UITableViewDelegate, UITableViewDataSource {
             style: .normal,
             title: "Add to favotite"
         ) { (_: UIContextualAction, _: UIView, success: (Bool) -> Void) in
-            
+            self.presenter.didSwipeToAddToFavorites(at: indexPath)
             success(true)
         }
         shareAction.image = UIImage(systemName: "bookmark")
