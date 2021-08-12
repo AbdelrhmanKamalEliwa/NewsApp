@@ -65,6 +65,16 @@ class FavoritesPresenter: FavoritesPresenterProtocol {
     private func fetchData() {
         interactor.fetchFavorites()
     }
+    
+    private func sortDataByDate() {
+        dataSource.sort {
+            $0.publishedAt!.convertToDate(
+                formatter: "yyyy-MM-dd'T'HH:mm:ssZZZ"
+            ) > $1.publishedAt!.convertToDate(
+                formatter: "yyyy-MM-dd'T'HH:mm:ssZZZ"
+            )
+        }
+    }
 }
 
 // MARK: - Interactor Response
@@ -72,6 +82,7 @@ extension FavoritesPresenter: FavoritesInteractorOutputProtocol {
     
     func favoritesFetchedSuccessfully(_ data: [FavoriteArticles]) {
         dataSource = data
+        sortDataByDate()
         view?.fetchDataSuccess()
     }
     
