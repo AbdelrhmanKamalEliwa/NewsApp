@@ -53,7 +53,7 @@ class HeadlinesPresenter: HeadlinesPresenterProtocol {
         view?.setupSearchBar()
         view?.setupTableView()
         view?.setupRefreshController()
-        fetchData()
+        fetchData(isPaginated: false)
     }
     
     func viewWillAppear() {
@@ -97,13 +97,13 @@ class HeadlinesPresenter: HeadlinesPresenterProtocol {
             view?.showError(with: "Invalid URL", message: "Can't open the atricle on Safari")
             return
         }
-        router.navigateToSafariVC(form: view, with: url)
+        router.presentSafariVC(form: view, with: url)
     }
     
     func didTapSegmentedControl(for title: String?) {
         guard let title = title else { return }
         category = title.lowercased()
-        fetchData()
+        fetchData(isPaginated: false)
     }
     
     func willDisplayCell(at indexPath: IndexPath) {
@@ -116,7 +116,8 @@ class HeadlinesPresenter: HeadlinesPresenterProtocol {
             country: countryCode,
             category: category,
             pageSize: pageSize,
-            page: page
+            page: page,
+            isPaginated: true
         )
     }
     
@@ -138,16 +139,55 @@ class HeadlinesPresenter: HeadlinesPresenterProtocol {
     
     func refreshData() {
         page = 1
-        fetchData()
+        fetchData(isPaginated: false)
     }
     
-    private func fetchData() {
+    func didTapFavoritesButton() {
+        router.presentFavoritesVC(from: view)
+    }
+    
+    func didSwipeToAddToFavorites(at indexPath: IndexPath) {
+        cacheStatus ? addCachedArticleToFavorites(at: indexPath) : addArticleToFavorites(at: indexPath)
+    }
+    
+    private func addArticleToFavorites(at indexPath: IndexPath) {
+        var article: ArticleModel?
+        article = isSearching ? searchDataSource[indexPath.row] : dataSource[indexPath.row]
+        guard let article = article else { return }
+        let articleId =
+            (article.publishedAt ?? "") +
+            (article.source.id ?? "") +
+            (article.source.name ?? "") +
+            ("\(Int.random(in: 0...1000))")
+        interactor.addToFavorites(article, articleId: articleId)
+    }
+    
+    private func addCachedArticleToFavorites(at indexPath: IndexPath) {
+        let cachedArticle = cachedData[indexPath.row]
+        let article: ArticleModel = ArticleModel(
+            source: SourceModel(id: nil, name: cachedArticle.source),
+            title: cachedArticle.title,
+            description: cachedArticle.articleDescription,
+            urlToImage: cachedArticle.urlToImage,
+            publishedAt: cachedArticle.publishedAt,
+            url: cachedArticle.url
+        )
+        let articleId =
+            (article.publishedAt ?? "") +
+            (article.source.id ?? "") +
+            (article.source.name ?? "") +
+            ("\(Int.random(in: 0...1000))")
+        interactor.addToFavorites(article, articleId: articleId)
+    }
+    
+    private func fetchData(isPaginated: Bool) {
         view?.showLoadingAnimation()
         interactor.fetchData(
             country: countryCode,
             category: category,
             pageSize: pageSize,
-            page: page
+            page: page,
+            isPaginated: isPaginated
         )
     }
     
@@ -184,10 +224,14 @@ extension HeadlinesPresenter: HeadlinesInteractorOutputProtocol {
         view?.fetchDataSuccess()
     }
     
-    func dataFetchedSuccessfully(_ data: NewsModel) {
+    func dataFetchedSuccessfully(_ data: NewsModel, isPaginated: Bool) {
         view?.hideLoadingAnimation()
         if !data.articles.isEmpty {
-            dataSource.append(contentsOf: data.articles)
+            if isPaginated {
+                dataSource.append(contentsOf: data.articles)
+            } else {
+                dataSource = data.articles
+            }
         }
         self.totalCount = data.totalResults
         cacheStatus = false
@@ -214,5 +258,12 @@ extension HeadlinesPresenter: HeadlinesInteractorOutputProtocol {
     func coreDataResponseFailed(_ error: Error?) {
         guard let error = error else { return }
         view?.showError(with: "Error", message: error.localizedDescription)
+    }
+    
+    func articleAddedToFavoritesSuccessfully() {
+        view?.showError(
+            with: "Success",
+            message: "Article has been added to favorites successfully"
+        )
     }
 }

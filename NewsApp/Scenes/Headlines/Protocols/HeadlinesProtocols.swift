@@ -39,25 +39,30 @@ protocol HeadlinesPresenterProtocol: AnyObject {
     func searchBarCancelButtonClicked()
     func scrollViewDidScroll(status: Bool)
     func refreshData()
+    func didTapFavoritesButton()
+    func didSwipeToAddToFavorites(at indexPath: IndexPath)
 }
 
 protocol HeadlinesInteractorInputProtocol {
     var presenter: HeadlinesInteractorOutputProtocol? { get set }
-    func fetchData(country: String, category: String, pageSize: Int, page: Int)
+    func fetchData(country: String, category: String, pageSize: Int, page: Int, isPaginated: Bool)
     func search(for text: String)
     func cacheData(_ data: [ArticleModel], pageIndex: Int)
     func loadCachedData()
+    func addToFavorites(_ article: ArticleModel, articleId: String)
 }
 
 protocol HeadlinesInteractorOutputProtocol: AnyObject {
-    func dataFetchedSuccessfully(_ data: NewsModel)
+    func dataFetchedSuccessfully(_ data: NewsModel, isPaginated: Bool)
     func searchDataFetchedSuccessfully(_ data: NewsModel)
     func dataFetchingFailed(withError error: Error?)
     func noInternetConnection()
     func coreDataResponseSuccessfully(_ data: [Articles]?)
     func coreDataResponseFailed(_ error: Error?)
+    func articleAddedToFavoritesSuccessfully()
 }
 
 protocol HeadlinesRouterProtocol {
-    func navigateToSafariVC(form view: HeadlinesViewProtocol?, with url: URL)
+    func presentSafariVC(form view: HeadlinesViewProtocol?, with url: URL)
+    func presentFavoritesVC(from view: HeadlinesViewProtocol?)
 }

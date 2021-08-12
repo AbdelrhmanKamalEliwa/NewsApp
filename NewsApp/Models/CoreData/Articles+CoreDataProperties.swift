@@ -2,7 +2,7 @@
 //  Articles+CoreDataProperties.swift
 //  
 //
-//  Created by Abdelrhman Eliwa on 11/08/2021.
+//  Created by Abdelrhman Eliwa on 12/08/2021.
 //
 //
 
@@ -16,12 +16,11 @@ extension Articles {
         return NSFetchRequest<Articles>(entityName: "Articles")
     }
 
+    @NSManaged public var articleDescription: String?
+    @NSManaged public var publishedAt: String?
     @NSManaged public var source: String?
     @NSManaged public var title: String?
-    @NSManaged public var articleDescription: String?
-    @NSManaged public var urlToImage: String?
-    @NSManaged public var publishedAt: String?
     @NSManaged public var url: String?
-    @NSManaged public var favorite: FavoriteArticles?
+    @NSManaged public var urlToImage: String?
 
 }

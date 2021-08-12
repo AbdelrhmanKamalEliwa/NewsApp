@@ -6,7 +6,6 @@ target 'NewsApp' do
   use_frameworks!
 
   # Pods for NewsApp
-    pod 'lottie-ios'
     pod 'Kingfisher', '~> 6.0'
     pod 'ProgressHUD'
     pod 'SKCountryPicker'

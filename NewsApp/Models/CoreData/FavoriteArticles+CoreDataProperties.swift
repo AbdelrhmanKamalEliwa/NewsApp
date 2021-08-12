@@ -2,7 +2,7 @@
 //  FavoriteArticles+CoreDataProperties.swift
 //  
 //
-//  Created by Abdelrhman Eliwa on 11/08/2021.
+//  Created by Abdelrhman Eliwa on 12/08/2021.
 //
 //
 
@@ -17,23 +17,11 @@ extension FavoriteArticles {
     }
 
     @NSManaged public var articleId: String?
-    @NSManaged public var articles: NSSet?
-
-}
-
-// MARK: Generated accessors for articles
-extension FavoriteArticles {
-
-    @objc(addArticlesObject:)
-    @NSManaged public func addToArticles(_ value: Articles)
-
-    @objc(removeArticlesObject:)
-    @NSManaged public func removeFromArticles(_ value: Articles)
-
-    @objc(addArticles:)
-    @NSManaged public func addToArticles(_ values: NSSet)
-
-    @objc(removeArticles:)
-    @NSManaged public func removeFromArticles(_ values: NSSet)
+    @NSManaged public var title: String?
+    @NSManaged public var articleDescription: String?
+    @NSManaged public var publishedAt: String?
+    @NSManaged public var source: String?
+    @NSManaged public var url: String?
+    @NSManaged public var urlToImage: String?
 
 }

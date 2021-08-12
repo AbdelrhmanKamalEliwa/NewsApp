@@ -2,7 +2,7 @@
 //  Articles+CoreDataClass.swift
 //  
 //
-//  Created by Abdelrhman Eliwa on 11/08/2021.
+//  Created by Abdelrhman Eliwa on 12/08/2021.
 //
 //
 

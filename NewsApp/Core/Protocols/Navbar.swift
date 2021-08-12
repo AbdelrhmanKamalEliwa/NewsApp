@@ -14,6 +14,7 @@ protocol DefaultNavbarProtocol {
 protocol CustomeNavbarProtocol {
     func setupCustomeNavbar(
         with title: String?,
+        largeTitle: Bool,
         leftbarButtonItems: [UIBarButtonItem]?,
         rightbarButtonItems: [UIBarButtonItem]?
     )
@@ -33,13 +34,14 @@ extension CustomeNavbarProtocol where Self: UIViewController {
     ///   - rightbarButtonItems: right buttons of the Navbar
     func setupCustomeNavbar(
         with title: String? = nil,
+        largeTitle: Bool = false,
         leftbarButtonItems: [UIBarButtonItem]? = nil,
         rightbarButtonItems: [UIBarButtonItem]? = nil
     ) {
         navbar?.isHidden = false
         navbar?.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         navbar?.shadowImage = UIImage()
-        navbar?.prefersLargeTitles = false
+        navbar?.prefersLargeTitles = largeTitle
         navbar?.titleTextAttributes = [
             NSAttributedString.Key.font: UIFont.sfProText(.semiBold, ofSize: 18),
             NSAttributedString.Key.foregroundColor: UIColor(named: "AppBlack")!

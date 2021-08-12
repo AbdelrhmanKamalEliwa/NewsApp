@@ -29,10 +29,17 @@ class HeadlinesRouter: HeadlinesRouterProtocol {
         return view
     }
     
-    func navigateToSafariVC(form view: HeadlinesViewProtocol?, with url: URL) {
+    func presentSafariVC(form view: HeadlinesViewProtocol?, with url: URL) {
         let safariVC = SFSafariViewController(url: url)
         if let viewController = view as? UIViewController {
             viewController.present(safariVC, animated: true, completion: nil)
+        }
+    }
+    
+    func presentFavoritesVC(from view: HeadlinesViewProtocol?) {
+        let favoritesVC = FavoritesRouter.createModule()
+        if let viewController = view as? UIViewController {
+            viewController.navigationController?.pushViewController(favoritesVC, animated: true)
         }
     }
 }
