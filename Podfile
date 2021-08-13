@@ -9,4 +9,5 @@ target 'NewsApp' do
     pod 'Kingfisher', '~> 6.0'
     pod 'ProgressHUD'
     pod 'SKCountryPicker'
+    pod 'MOLH'
 end
