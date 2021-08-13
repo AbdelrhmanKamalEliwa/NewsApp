@@ -26,7 +26,6 @@ class OnboardingPresenterTests: XCTestCase {
         try super.tearDownWithError()
     }
     
-    // MARK: Test the Country Code to check if the user did select a country or not
     func testDidSelectCountry() {
         let countryCode = "ar"
         sut.didSelectCountry(with: countryCode)
@@ -35,7 +34,6 @@ class OnboardingPresenterTests: XCTestCase {
         XCTAssertTrue(result)
     }
     
-    // MARK: Test the Categories to check if the user did select at least 3 different categories or not
     func testDidTapCategoriesButtons() {
         // identifier must be false
         // tag must be diferent values from 1 to 7

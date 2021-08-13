@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let countryCode = UserDataManager.shared.countryCode
         let categories = UserDataManager.shared.categories
         let headlinesVC = HeadlinesRouter.createModule(countryCode: countryCode, categories: categories)
-        return UserDataManager.shared.didUserSeeOnboardingScreen ? headlinesVC :onboardingVC
+        return UserDataManager.shared.didUserSeeOnboardingScreen ? headlinesVC : onboardingVC
     }
     
     // MARK: - Core Data stack

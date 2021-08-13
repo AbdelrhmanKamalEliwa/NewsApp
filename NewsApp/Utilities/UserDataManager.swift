@@ -1,6 +1,5 @@
 //
 //  UserDataManager.swift
-//  e-Mawaeed
 //
 //  Created by Abdelrhman Eliwa on 06/06/2021.
 //

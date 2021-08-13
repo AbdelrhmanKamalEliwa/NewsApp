@@ -24,7 +24,6 @@ class AppDelegateTests: XCTestCase {
         try super.tearDownWithError()
     }
 
-    // MARK: - Test if the user did pass the Onboarding Screen and the screen will not be shown again
     func testSetInitialVC() {
         let result = sut.setInitialVC()
         let expression = UserDataManager.shared.didUserSeeOnboardingScreen ? result is HeadlinesVC : result is OnboardingVC
