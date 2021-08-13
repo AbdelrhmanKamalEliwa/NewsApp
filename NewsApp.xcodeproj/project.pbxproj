@@ -218,7 +218,6 @@
 			isa = PBXGroup;
 			children = (
 				F41C516626C165950061D188 /* Application */,
-				F41C516726C1659A0061D188 /* Localization */,
 				F41C516826C165A50061D188 /* Assets */,
 			);
 			path = Resources;
@@ -242,20 +241,12 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		F41C516726C1659A0061D188 /* Localization */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Localization;
-			sourceTree = "<group>";
-		};
 		F41C516826C165A50061D188 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
 				5A7A54B126C144F30015CA43 /* Icons.xcassets */,
 				F41C516A26C165C40061D188 /* Colors.xcassets */,
 				F41C51B226C16EB30061D188 /* Fonts */,
-				F41C51C626C16F3A0061D188 /* Animations */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -413,13 +404,6 @@
 				F41C51C326C16ECD0061D188 /* SF-Pro-Text-UltralightItalic.otf */,
 			);
 			path = "SF Pro Text";
-			sourceTree = "<group>";
-		};
-		F41C51C626C16F3A0061D188 /* Animations */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Animations;
 			sourceTree = "<group>";
 		};
 		F482ADED26C2092B002DF570 /* Models */ = {
@@ -839,7 +823,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -894,7 +878,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
