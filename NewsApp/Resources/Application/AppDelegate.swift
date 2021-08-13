@@ -20,15 +20,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func setupMainRouter() {
         mainRouter = MainRouter()
-        var initialVC = UINavigationController()
-        let onboardingVC = OnboardingRouter.createModule()
-        let homeVC = UIViewController()
-        if UserDataManager.shared.didUserSeeOnboardingScreen {
-            initialVC = UINavigationController(rootViewController: onboardingVC)
-        } else {
-            initialVC = UINavigationController(rootViewController: onboardingVC)
-        }
+        let initialVC = UINavigationController(rootViewController: setInitialVC())
         mainRouter?.start(with: initialVC)
+    }
+    
+    func setInitialVC() -> UIViewController {
+        let onboardingVC = OnboardingRouter.createModule()
+        let countryCode = UserDataManager.shared.countryCode
+        let categories = UserDataManager.shared.categories
+        let headlinesVC = HeadlinesRouter.createModule(countryCode: countryCode, categories: categories)
+        return UserDataManager.shared.didUserSeeOnboardingScreen ? headlinesVC :onboardingVC
     }
     
     // MARK: - Core Data stack

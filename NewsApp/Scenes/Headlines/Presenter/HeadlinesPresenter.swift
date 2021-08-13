@@ -48,8 +48,8 @@ class HeadlinesPresenter: HeadlinesPresenterProtocol {
     
     // MARK: - Methods
     func viewDidLoad() {
-        category = getCategoriesTitles().first!
-        view?.setupSegmentedControll(with: getCategoriesTitles())
+        category = Categories.getCategoriesTitles(categories).first!
+        view?.setupSegmentedControll(with: Categories.getCategoriesTitles(categories))
         view?.setupSearchBar()
         view?.setupTableView()
         view?.setupRefreshController()
@@ -191,28 +191,28 @@ class HeadlinesPresenter: HeadlinesPresenterProtocol {
         )
     }
     
-    private func getCategoriesTitles() -> [String] {
-        var titles: [String] = []
-        categories.forEach { category in
-            switch category {
-            case .business:
-                titles.append("business")
-            case .entertainment:
-                titles.append("entertainment")
-            case .general:
-                titles.append("general")
-            case .health:
-                titles.append("health")
-            case .science:
-                titles.append("science")
-            case .sports:
-                titles.append("sports")
-            case .technology:
-                titles.append("technology")
-            }
-        }
-        return titles
-    }
+//    private func getCategoriesTitles() -> [String] {
+//        var titles: [String] = []
+//        categories.forEach { category in
+//            switch category {
+//            case .business:
+//                titles.append("business")
+//            case .entertainment:
+//                titles.append("entertainment")
+//            case .general:
+//                titles.append("general")
+//            case .health:
+//                titles.append("health")
+//            case .science:
+//                titles.append("science")
+//            case .sports:
+//                titles.append("sports")
+//            case .technology:
+//                titles.append("technology")
+//            }
+//        }
+//        return titles
+//    }
 }
 
 // MARK: - Interactor Response

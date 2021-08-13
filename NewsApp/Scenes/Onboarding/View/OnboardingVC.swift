@@ -48,7 +48,6 @@ class OnboardingVC: BaseWireframe, DefaultNavbarProtocol {
 extension OnboardingVC: OnBoardingViewProtocol {
    
     func setupUI() {
-        UserDataManager.shared.userDidSeeOnboardingScreen()
         listenToPickerView()
         startButton.cornerRadius = startButton.frame.height / 6
     }
