@@ -11,25 +11,21 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    var mainRouter: MainRouter?
+    var window: UIWindow?
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        setupMainRouter()
+    func application(
+        _ application: UIApplication, didFinishLaunchingWithOptions
+            launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+    ) -> Bool {
+        start()
         return true
     }
     
-    private func setupMainRouter() {
-        mainRouter = MainRouter()
-        let initialVC = UINavigationController(rootViewController: setInitialVC())
-        mainRouter?.start(with: initialVC)
-    }
-    
-    func setInitialVC() -> UIViewController {
-        let onboardingVC = OnboardingRouter.createModule()
-        let countryCode = UserDataManager.shared.countryCode
-        let categories = UserDataManager.shared.categories
-        let headlinesVC = HeadlinesRouter.createModule(countryCode: countryCode, categories: categories)
-        return UserDataManager.shared.didUserSeeOnboardingScreen ? headlinesVC : onboardingVC
+    private func start() {
+        let mainRouter = MainRouter()
+        window = UIWindow()
+        window?.rootViewController = mainRouter.setInitialVC()
+        window?.makeKeyAndVisible()
     }
     
     // MARK: - Core Data stack
