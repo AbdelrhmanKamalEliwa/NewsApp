@@ -32,7 +32,7 @@ class OnboardingPresenterTests: XCTestCase {
         sut.didSelectCountry(with: countryCode)
         let result = sut.validateCountryCode()
         
-        XCTAssertEqual(result, true)
+        XCTAssertTrue(result)
     }
     
     // MARK: Test the Categories to check if the user did select at least 3 different categories or not
@@ -45,7 +45,7 @@ class OnboardingPresenterTests: XCTestCase {
         sut.didTapCategoriesButtons(for: 7, with: identifier)
         let result = sut.validateCategories()
         
-        XCTAssertEqual(result, true)
+        XCTAssertTrue(result)
     }
     
 }
