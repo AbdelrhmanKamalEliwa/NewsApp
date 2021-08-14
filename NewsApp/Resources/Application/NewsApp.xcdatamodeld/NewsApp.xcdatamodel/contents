@@ -4,6 +4,7 @@
         <attribute name="articleDescription" optional="YES" attributeType="String"/>
         <attribute name="publishedAt" optional="YES" attributeType="String"/>
         <attribute name="source" optional="YES" attributeType="String"/>
+        <attribute name="sourceId" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="url" optional="YES" attributeType="String"/>
         <attribute name="urlToImage" optional="YES" attributeType="String"/>
@@ -13,12 +14,13 @@
         <attribute name="articleId" optional="YES" attributeType="String"/>
         <attribute name="publishedAt" optional="YES" attributeType="String"/>
         <attribute name="source" optional="YES" attributeType="String"/>
+        <attribute name="sourceId" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="url" optional="YES" attributeType="String"/>
         <attribute name="urlToImage" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Articles" positionX="-63" positionY="-18" width="128" height="119"/>
-        <element name="FavoriteArticles" positionX="-63" positionY="36" width="128" height="134"/>
+        <element name="Articles" positionX="-63" positionY="-18" width="128" height="134"/>
+        <element name="FavoriteArticles" positionX="-63" positionY="36" width="128" height="149"/>
     </elements>
 </model>

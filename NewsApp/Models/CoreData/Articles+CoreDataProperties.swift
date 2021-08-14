@@ -2,7 +2,7 @@
 //  Articles+CoreDataProperties.swift
 //  
 //
-//  Created by Abdelrhman Eliwa on 12/08/2021.
+//  Created by Abdelrhman Eliwa on 14/08/2021.
 //
 //
 
@@ -22,5 +22,6 @@ extension Articles {
     @NSManaged public var title: String?
     @NSManaged public var url: String?
     @NSManaged public var urlToImage: String?
+    @NSManaged public var sourceId: String?
 
 }

@@ -127,7 +127,7 @@ class HeadlinesPresenter: HeadlinesPresenterProtocol {
     }
     
     func search(for text: String?) {
-        guard let text = text else { return }
+        guard let text = text, !text.isEmpty, !text.hasPrefix(" ") else { return }
         isSearching = true
         view?.showLoadingAnimation()
         interactor.search(for: text)
@@ -226,7 +226,7 @@ class HeadlinesPresenter: HeadlinesPresenterProtocol {
         }
         guard
             let article = favoriteArticle,
-            favoriteArticles.contains(article)
+            !favoriteArticles.contains(article)
         else {
             view?.showError(with: "Error".localized, message: "Failed to add the article to favorites".localized)
             return

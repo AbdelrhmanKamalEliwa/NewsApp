@@ -93,6 +93,7 @@ class CoreDataManager {
             newArticle.setValue(article.publishedAt, forKeyPath: "publishedAt")
             newArticle.setValue(article.urlToImage, forKeyPath: "urlToImage")
             newArticle.setValue(article.url, forKeyPath: "url")
+            newArticle.setValue(article.source.id, forKeyPath: "sourceId")
         }
         do {
             try managedContext.save()
@@ -118,6 +119,7 @@ class CoreDataManager {
         newArticle.setValue(article.publishedAt, forKeyPath: "publishedAt")
         newArticle.setValue(article.urlToImage, forKeyPath: "urlToImage")
         newArticle.setValue(article.url, forKeyPath: "url")
+        newArticle.setValue(article.source.id, forKey: "sourceId")
         do {
             try managedContext.save()
             return nil
@@ -142,6 +144,7 @@ class CoreDataManager {
                     result[i].setValue(articles[i].publishedAt, forKeyPath: "publishedAt")
                     result[i].setValue(articles[i].urlToImage, forKeyPath: "urlToImage")
                     result[i].setValue(articles[i].url, forKeyPath: "url")
+                    result[i].setValue(articles[i].source.id, forKeyPath: "sourceId")
                 }
             }
             try managedContext.save()

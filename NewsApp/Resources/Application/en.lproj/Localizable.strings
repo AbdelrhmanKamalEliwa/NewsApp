@@ -17,6 +17,7 @@
 "Continue" = "Continue";
 "Change Language" = "Change Language";
 "App will terminate to change the current language" = "App will terminate to change the current language";
+"Failed to add the article to favorites" = "Failed to add the article to favorites";
 
 //CategoriesTitles
 "Business" = "Business";
