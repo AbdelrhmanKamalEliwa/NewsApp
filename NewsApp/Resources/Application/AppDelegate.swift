@@ -77,6 +77,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate: MOLHResetable {
     func reset() {
-        exit(0)
+        UIControl().sendAction(
+            #selector(URLSessionTask.suspend), to: UIApplication.shared, for: nil
+        )
+        Timer.scheduledTimer(
+            withTimeInterval: 0.2, repeats: false
+        ) { (timer) in
+            exit(0)
+        }
     }
 }
