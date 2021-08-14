@@ -1,0 +1,54 @@
+/* 
+  Localizable.strings
+  NewsApp
+
+  Created by Abdelrhman Eliwa on 14/08/2021.
+  
+*/
+
+//Constants
+"CurrentAppLanguage" = "ar";
+"Okay" = "موافق";
+"Refresh" = "تحديث";
+"Add to favotite" = "اضافة إلي المفضلة";
+"Success" = "نجاح";
+"Error" = "خطأ";
+
+//CategoriesTitles
+"Categories.Business" = "عمل";
+"Categories.Entertainment" = "ترفيه";
+"Categories.General" = "عام";
+"Categories.Health" = "صحه";
+"Categories.Science" = "علوم";
+"Categories.Sports" = "رياضة";
+"Categories.Technology" = "تكنولوجيا";
+
+
+//OnboardingVC
+"OnboardingVC.titleLabel" = "مرحبًا بك في تطبيق الأخبار";
+"OnboardingVC.countryTitleLabel" = "حدد بلدك المفضل";
+"OnboardingVC.categoriesTitleLabel" = "حدد الفئات المفضلة لديك";
+"OnboardingVC.startButton" = "دخول";
+//OnboardingPresenter
+"Select Favorite Country" = "حدد الدولة المفضلة";
+"You should select your favorite country to start" = "يجب عليك اختيار بلدك المفضل للبدء";
+"Select Categories" = "حدد الفئات";
+"You should select at least, no more, 3 categories to start" = "يجب عليك تحديد 3 فئات على الأقل ، لا أكثر ، للبدء";
+
+
+//HeadlinesVC
+"HeadlinesVC.searchBar.placeholder" = "ابحث عن أي مقال ...";
+"HeadlinesVC.LanguageButton" = "EN";
+"HeadlinesVC.title" = "العناوين";
+//HeadlinesPresenter
+"No Internet Connection" = "لا يوجد اتصال بالإنترنت";
+"Please check your internet connection and try again" = "يرجى التحقق من اتصالك بالإنترنت وحاول مرة أخرى";
+"Invalid URL" = "رابط غير صالح";
+"Can't open the atricle on Safari" = "لا يمكن فتح المقال على المتصفح";
+"Article has been added to favorites successfully" = "تمت إضافة المقال إلى المفضلة بنجاح";
+
+
+//FavoritesVC
+"FavoritesVC.title" = "المفضلة";
+//FavoritesPresenter
+"Faild to delete article" = "فشل حذف المقال";

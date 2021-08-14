@@ -49,8 +49,8 @@ class OnboardingPresenter: OnBoardingPresenterProtocol {
     func validateCountryCode() -> Bool {
         guard !countryCode.isEmpty  else {
             view?.showError(
-                with: "Select Favorite Country",
-                message: "You should select your favorite country to start"
+                with: "Select Favorite Country".localized,
+                message: "You should select your favorite country to start".localized
             )
             return false
         }
@@ -60,8 +60,8 @@ class OnboardingPresenter: OnBoardingPresenterProtocol {
     func validateCategories() -> Bool {
         guard categories.count == 3 else {
             view?.showError(
-                with: "Select Categories",
-                message: "You should select at least, no more, 3 categories to start"
+                with: "Select Categories".localized,
+                message: "You should select at least, no more, 3 categories to start".localized
             )
             return false
         }

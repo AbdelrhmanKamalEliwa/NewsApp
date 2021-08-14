@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import MOLH
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     ) -> Bool {
         start()
+        MOLH.shared.activate(true)
         return true
     }
     

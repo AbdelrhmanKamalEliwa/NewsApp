@@ -15,6 +15,7 @@ class OnboardingVC: BaseWireframe, DefaultNavbarProtocol {
     @IBOutlet private weak var contryPickerView: CountryPickerView!
     @IBOutlet private weak var categoriesTitleLabel: UILabel!
     @IBOutlet private var categoriesButtons: [UIButton]!
+    @IBOutlet private var categoriesTitles: [UILabel]!
     @IBOutlet private weak var startButton: UIButton!
     var presenter: OnBoardingPresenterProtocol!
     
@@ -48,6 +49,7 @@ class OnboardingVC: BaseWireframe, DefaultNavbarProtocol {
 extension OnboardingVC: OnBoardingViewProtocol {
    
     func setupUI() {
+        titleLabel.text = "OnboardingVC.titleLabel".localized
         listenToPickerView()
         startButton.cornerRadius = startButton.frame.height / 6
     }
@@ -66,7 +68,7 @@ extension OnboardingVC: OnBoardingViewProtocol {
     }
     
     func showError(with title: String, message: String) {
-        let action = UIAlertAction(title: "Okay", style: .default)
+        let action = UIAlertAction(title: "Okay".localized, style: .default)
         displayAlert(with: title, message: message, actions: [action])
     }
 }

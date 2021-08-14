@@ -54,6 +54,7 @@
 		F4B124AD26C60F6000082B41 /* OnboardingPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B124AC26C60F6000082B41 /* OnboardingPresenterTests.swift */; };
 		F4B124B526C6540A00082B41 /* Categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B124B426C6540A00082B41 /* Categories.swift */; };
 		F4B124B726C6ECB800082B41 /* MainRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B124B626C6ECB800082B41 /* MainRouterTests.swift */; };
+		F4B124BB26C73FFA00082B41 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4B124BD26C73FFA00082B41 /* Localizable.strings */; };
 		F4B1308D26C453AB00F9C590 /* NewsApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F4B1308B26C453AB00F9C590 /* NewsApp.xcdatamodeld */; };
 		F4B1309E26C4B7FA00F9C590 /* FavoriteArticles+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B1309A26C4B7F900F9C590 /* FavoriteArticles+CoreDataProperties.swift */; };
 		F4B1309F26C4B7FA00F9C590 /* Articles+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B1309B26C4B7FA00F9C590 /* Articles+CoreDataClass.swift */; };
@@ -143,6 +144,9 @@
 		F4B124AC26C60F6000082B41 /* OnboardingPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPresenterTests.swift; sourceTree = "<group>"; };
 		F4B124B426C6540A00082B41 /* Categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categories.swift; sourceTree = "<group>"; };
 		F4B124B626C6ECB800082B41 /* MainRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouterTests.swift; sourceTree = "<group>"; };
+		F4B124B826C73F1700082B41 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		F4B124BC26C73FFA00082B41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F4B124BE26C73FFD00082B41 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F4B1308C26C453AB00F9C590 /* NewsApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NewsApp.xcdatamodel; sourceTree = "<group>"; };
 		F4B1309A26C4B7F900F9C590 /* FavoriteArticles+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FavoriteArticles+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F4B1309B26C4B7FA00F9C590 /* Articles+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Articles+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -264,6 +268,7 @@
 				5A7A54A826C144EE0015CA43 /* AppDelegate.swift */,
 				5A7A54B326C144F30015CA43 /* LaunchScreen.storyboard */,
 				F4B1308B26C453AB00F9C590 /* NewsApp.xcdatamodeld */,
+				F4B124BD26C73FFA00082B41 /* Localizable.strings */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -663,6 +668,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 5A7A549C26C144EE0015CA43;
 			productRefGroup = 5A7A54A626C144EE0015CA43 /* Products */;
@@ -684,6 +690,7 @@
 				F482ADE126C205C7002DF570 /* SF-Pro-Text-UltralightItalic.otf in Resources */,
 				F41C518A26C16D830061D188 /* OnboardingVC.xib in Resources */,
 				F482ADDC26C205C7002DF570 /* SF-Pro-Text-SemiboldItalic.otf in Resources */,
+				F4B124BB26C73FFA00082B41 /* Localizable.strings in Resources */,
 				F4EB1F8426C3C4F800912F20 /* FavoritesVC.xib in Resources */,
 				F41C517326C166DA0061D188 /* .swiftlint.yml in Resources */,
 				F482ADE826C205C7002DF570 /* SF-Pro-Text-Thin.otf in Resources */,
@@ -851,8 +858,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				5A7A54B426C144F30015CA43 /* Base */,
+				F4B124B826C73F1700082B41 /* ar */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F4B124BD26C73FFA00082B41 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4B124BC26C73FFA00082B41 /* en */,
+				F4B124BE26C73FFD00082B41 /* ar */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -862,6 +879,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -923,6 +941,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

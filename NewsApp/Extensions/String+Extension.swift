@@ -8,6 +8,11 @@
 import UIKit
 
 extension String {
+    
+    var localized: String {
+        NSLocalizedString(self, comment: "")
+    }
+    
     func size(of font: UIFont) -> CGSize {
         return (self as NSString).size(withAttributes: [NSAttributedString.Key.font: font])
     }

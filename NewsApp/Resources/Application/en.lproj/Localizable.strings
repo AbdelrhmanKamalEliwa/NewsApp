@@ -1,0 +1,54 @@
+/* 
+  Localizable.strings
+  NewsApp
+
+  Created by Abdelrhman Eliwa on 14/08/2021.
+  
+*/
+
+//Constants
+"CurrentAppLanguage" = "en";
+"Okay" = "Okay";
+"Refresh" = "Refresh";
+"Add to favotite" = "Add to favotite";
+"Success" = "Success";
+"Error" = "Error";
+
+//CategoriesTitles
+"Categories.Business" = "Business";
+"Categories.Entertainment" = "Entertainment";
+"Categories.General" = "General";
+"Categories.Health" = "Health";
+"Categories.Science" = "Science";
+"Categories.Sports" = "Sports";
+"Categories.Technology" = "Technology";
+
+
+//OnboardingVC
+"OnboardingVC.titleLabel" = "Welcome to the NewsApp";
+"OnboardingVC.countryTitleLabel" = "Select your favorite country";
+"OnboardingVC.categoriesTitleLabel" = "Select your favorite categories";
+"OnboardingVC.startButton" = "Start";
+//OnboardingPresenter
+"Select Favorite Country" = "Select Favorite Country";
+"You should select your favorite country to start" = "You should select your favorite country to start";
+"Select Categories" = "Select Categories";
+"You should select at least, no more, 3 categories to start" = "You should select at least, no more, 3 categories to start";
+
+
+//HeadlinesVC
+"HeadlinesVC.searchBar.placeholder" = "Search for any article ...";
+"HeadlinesVC.LanguageButton" = "AR";
+"HeadlinesVC.title" = "Headlines";
+//HeadlinesPresenter
+"No Internet Connection" = "No Internet Connection";
+"Please check your internet connection and try again" = "Please check your internet connection and try again";
+"Invalid URL" = "Invalid URL";
+"Can't open the atricle on Safari" = "Can't open the atricle on Safari";
+"Article has been added to favorites successfully" = "Article has been added to favorites successfully";
+
+
+//FavoritesVC
+"FavoritesVC.title" = "Favorites";
+//FavoritesPresenter
+"Faild to delete article" = "Faild to delete article";
