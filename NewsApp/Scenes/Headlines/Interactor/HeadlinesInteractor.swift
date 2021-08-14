@@ -92,4 +92,15 @@ class HeadlinesInteractor: HeadlinesInteractorInputProtocol {
             }
         }
     }
+    
+    func fetchFavorites() {
+        DispatchQueue.main.async {
+            let result = self.coreDataManager.loadFavoriteArticles()
+            if let data = result.0 {
+                self.presenter?.favoritesFetchedSuccessfully(data)
+            } else {
+                self.presenter?.favoritesFetchingFailed(withError: result.1)
+            }
+        }
+    }
 }

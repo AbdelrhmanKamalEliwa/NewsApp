@@ -52,6 +52,7 @@ protocol HeadlinesInteractorInputProtocol {
     func cacheData(_ data: [ArticleModel], pageIndex: Int)
     func loadCachedData()
     func addToFavorites(_ article: ArticleModel, articleId: String)
+    func fetchFavorites()
 }
 
 protocol HeadlinesInteractorOutputProtocol: AnyObject {
@@ -62,6 +63,8 @@ protocol HeadlinesInteractorOutputProtocol: AnyObject {
     func coreDataResponseSuccessfully(_ data: [Articles]?)
     func coreDataResponseFailed(_ error: Error?)
     func articleAddedToFavoritesSuccessfully()
+    func favoritesFetchedSuccessfully(_ data: [FavoriteArticles])
+    func favoritesFetchingFailed(withError error: Error?)
 }
 
 protocol HeadlinesRouterProtocol {

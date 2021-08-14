@@ -17,6 +17,8 @@ class HeadlinesPresenter: HeadlinesPresenterProtocol {
     private let categories: [Categories]
     private var category: String = ""
     private var cachedData: [Articles] = []
+    private var favoriteArticle: ArticleModel?
+    private var favoriteArticleId: String = ""
     private var searchData: NewsModel?
     private var totalCount: Int = 0
     private var dataSource: [ArticleModel] = []
@@ -150,14 +152,15 @@ class HeadlinesPresenter: HeadlinesPresenterProtocol {
     }
     
     func didSwipeToAddToFavorites(at indexPath: IndexPath) {
-        cacheStatus ? addCachedArticleToFavorites(at: indexPath) : addArticleToFavorites(at: indexPath)
+        cacheStatus ? addCachedArticleToFavoritesBeforeCheck(at: indexPath) : addArticleToFavoritesBeforeCheck(at: indexPath)
     }
     
     func didTapLocalizationButton() {
         view?.presentAlertToChangeLanguage()
     }
     
-    private func addArticleToFavorites(at indexPath: IndexPath) {
+    private func addArticleToFavoritesBeforeCheck(at indexPath: IndexPath) {
+        
         var article: ArticleModel?
         article = isSearching ? searchDataSource[indexPath.row] : dataSource[indexPath.row]
         guard let article = article else { return }
@@ -166,10 +169,13 @@ class HeadlinesPresenter: HeadlinesPresenterProtocol {
             (article.source.id ?? "") +
             (article.source.name ?? "") +
             ("\(Int.random(in: 0...1000))")
-        interactor.addToFavorites(article, articleId: articleId)
+        favoriteArticleId = articleId
+        favoriteArticle = article
+        interactor.fetchFavorites()
+        //interactor.addToFavorites(article, articleId: articleId)
     }
     
-    private func addCachedArticleToFavorites(at indexPath: IndexPath) {
+    private func addCachedArticleToFavoritesBeforeCheck(at indexPath: IndexPath) {
         let cachedArticle = cachedData[indexPath.row]
         let article: ArticleModel = ArticleModel(
             source: SourceModel(id: nil, name: cachedArticle.source),
@@ -184,7 +190,10 @@ class HeadlinesPresenter: HeadlinesPresenterProtocol {
             (article.source.id ?? "") +
             (article.source.name ?? "") +
             ("\(Int.random(in: 0...1000))")
-        interactor.addToFavorites(article, articleId: articleId)
+        favoriteArticleId = articleId
+        favoriteArticle = article
+        interactor.fetchFavorites()
+        //interactor.addToFavorites(article, articleId: articleId)
     }
     
     private func fetchData(isPaginated: Bool) {
@@ -196,6 +205,33 @@ class HeadlinesPresenter: HeadlinesPresenterProtocol {
             page: page,
             isPaginated: isPaginated
         )
+    }
+    
+    func addArticlesToFavortieAfterCheck(in data: [FavoriteArticles]) {
+        guard !data.isEmpty else {
+            view?.showError(with: "Error".localized, message: "Failed to add the article to favorites".localized)
+            return
+        }
+        var favoriteArticles: [ArticleModel] = []
+        for article in data {
+            favoriteArticles.append(
+                ArticleModel(
+                    source: SourceModel(id: article.articleId, name: article.source),
+                    title: article.title,
+                    description: article.articleDescription,
+                    urlToImage: article.urlToImage,
+                    publishedAt: article.publishedAt,
+                    url: article.url)
+            )
+        }
+        guard
+            let article = favoriteArticle,
+            favoriteArticles.contains(article)
+        else {
+            view?.showError(with: "Error".localized, message: "Failed to add the article to favorites".localized)
+            return
+        }
+        interactor.addToFavorites(article, articleId: favoriteArticleId)
     }
 }
 
@@ -249,5 +285,13 @@ extension HeadlinesPresenter: HeadlinesInteractorOutputProtocol {
             with: "Success".localized,
             message: "Article has been added to favorites successfully".localized
         )
+    }
+    
+    func favoritesFetchedSuccessfully(_ data: [FavoriteArticles]) {
+        addArticlesToFavortieAfterCheck(in: data)
+    }
+    
+    func favoritesFetchingFailed(withError error: Error?) {
+        view?.showError(with: "Error".localized, message: "Failed to add the article to favorites".localized)
     }
 }

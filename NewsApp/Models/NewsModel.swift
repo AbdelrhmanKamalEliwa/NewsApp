@@ -1,12 +1,12 @@
 import Foundation
 
-struct NewsModel: Codable {
+struct NewsModel: Codable, Equatable {
     let status: String
     let totalResults: Int
     let articles: [ArticleModel]
 }
 
-struct ArticleModel: Codable {
+struct ArticleModel: Codable, Equatable {
     let source: SourceModel
     let title: String?
     let description: String?
@@ -15,7 +15,7 @@ struct ArticleModel: Codable {
     let url: String?
 }
 
-struct SourceModel: Codable {
+struct SourceModel: Codable, Equatable {
     let id: String?
     let name: String?
 }

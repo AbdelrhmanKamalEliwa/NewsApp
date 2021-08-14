@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func start() {
         let mainRouter = MainRouter()
         window = UIWindow()
-        window?.rootViewController = UINavigationController(rootViewController: OnboardingRouter.createModule())
+        window?.rootViewController = UINavigationController(rootViewController: mainRouter.setInitialVC())
         window?.makeKeyAndVisible()
     }
     
