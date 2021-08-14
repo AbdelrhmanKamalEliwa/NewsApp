@@ -13,15 +13,19 @@
 "Add to favotite" = "Add to favotite";
 "Success" = "Success";
 "Error" = "Error";
+"Dismiss" = "Dismiss";
+"Continue" = "Continue";
+"Change Language" = "Change Language";
+"App will terminate to change the current language" = "App will terminate to change the current language";
 
 //CategoriesTitles
-"Categories.Business" = "Business";
-"Categories.Entertainment" = "Entertainment";
-"Categories.General" = "General";
-"Categories.Health" = "Health";
-"Categories.Science" = "Science";
-"Categories.Sports" = "Sports";
-"Categories.Technology" = "Technology";
+"Business" = "Business";
+"Entertainment" = "Entertainment";
+"General" = "General";
+"Health" = "Health";
+"Science" = "Science";
+"Sports" = "Sports";
+"Technology" = "Technology";
 
 
 //OnboardingVC

@@ -55,7 +55,10 @@ class FavoritesPresenter: FavoritesPresenterProtocol {
     
     func didSwipeToRemoveArticle(at indexPath: IndexPath) {
         guard let articleId = dataSource[indexPath.row].articleId else {
-            view?.showError(with: "Error", message: "Faild to delete article")
+            view?.showError(
+                with: "Error".localized,
+                message: "Faild to delete article".localized
+            )
             return
         }
         indexPathToDelete = indexPath
@@ -66,7 +69,10 @@ class FavoritesPresenter: FavoritesPresenterProtocol {
         guard
             let stringUrl = dataSource[indexPath.row].url,
             let url = URL(string: stringUrl) else {
-            view?.showError(with: "Invalid URL", message: "Can't open the atricle on Safari")
+            view?.showError(
+                with: "Invalid URL".localized,
+                message: "Can't open the atricle on Safari".localized
+            )
             return
         }
         router.presentSafariVC(form: view, with: url)
@@ -97,7 +103,7 @@ extension FavoritesPresenter: FavoritesInteractorOutputProtocol {
     }
     
     func favoritesFetchingFailed(withError error: Error?) {
-        view?.showError(with: "Error", message: error?.localizedDescription ?? "")
+        view?.showError(with: "Error".localized, message: error?.localizedDescription ?? "")
     }
     
     func deleteArticleFetchedSuccessfully(_ articleId: String) {
@@ -106,6 +112,6 @@ extension FavoritesPresenter: FavoritesInteractorOutputProtocol {
     }
     
     func deleteArticleFetchingFailed(_ error: Error?) {
-        view?.showError(with: "Error", message: "Failed to delete article")
+        view?.showError(with: "Error".localized, message: "Failed to delete article".localized)
     }
 }

@@ -30,6 +30,10 @@ class OnboardingPresenter: OnBoardingPresenterProtocol {
         view?.setupNavbar()
     }
     
+    func viewDidLayoutSubViews() {
+        view?.setLocalizedStrings()
+    }
+    
     func didTapCategoriesButtons(for tag: Int, with identifier: String?) {
         if identifier == "true" {
             view?.updateCategoriesButtonsUI(

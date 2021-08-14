@@ -10,6 +10,7 @@ import Foundation
 protocol OnBoardingViewProtocol: AnyObject {
     var presenter: OnBoardingPresenterProtocol! { get set }
     func setupUI()
+    func setLocalizedStrings()
     func setupNavbar()
     func updateCategoriesButtonsUI(
         for buttonIndex: Int,
@@ -23,6 +24,7 @@ protocol OnBoardingPresenterProtocol: AnyObject {
     var view: OnBoardingViewProtocol? { get set }
     func viewDidLoad()
     func viewWillAppear()
+    func viewDidLayoutSubViews()
     func didTapCategoriesButtons(for tag: Int, with identifier: String?)
     func didTapStartButton()
     func didSelectCountry(with code: String)

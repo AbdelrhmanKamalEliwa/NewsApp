@@ -13,15 +13,20 @@
 "Add to favotite" = "اضافة إلي المفضلة";
 "Success" = "نجاح";
 "Error" = "خطأ";
+"Dismiss" = "رفض";
+"Continue" = "استمر";
+"Change Language" = "تغيير اللغة";
+"App will terminate to change the current language" = "سيتم إنهاء التطبيق لتغيير اللغة الحالية";
+
 
 //CategoriesTitles
-"Categories.Business" = "عمل";
-"Categories.Entertainment" = "ترفيه";
-"Categories.General" = "عام";
-"Categories.Health" = "صحه";
-"Categories.Science" = "علوم";
-"Categories.Sports" = "رياضة";
-"Categories.Technology" = "تكنولوجيا";
+"Business" = "عمل";
+"Entertainment" = "ترفيه";
+"General" = "عام";
+"Health" = "صحه";
+"Science" = "علوم";
+"Sports" = "رياضة";
+"Technology" = "تكنولوجيا";
 
 
 //OnboardingVC

@@ -20,6 +20,7 @@ protocol HeadlinesViewProtocol: AnyObject {
     func showError(with title: String, message: String)
     func updateUIForInternetConnection(_ isConnected: Bool)
     func animateUI(_ status: Bool)
+    func presentAlertToChangeLanguage()
 }
 
 protocol HeadlineCellProtocol {
@@ -41,6 +42,7 @@ protocol HeadlinesPresenterProtocol: AnyObject {
     func refreshData()
     func didTapFavoritesButton()
     func didSwipeToAddToFavorites(at indexPath: IndexPath)
+    func didTapLocalizationButton()
 }
 
 protocol HeadlinesInteractorInputProtocol {

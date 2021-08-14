@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MOLH
 
 class HeadlinesVC: BaseWireframe, CustomeNavbarProtocol {
     
@@ -36,7 +37,7 @@ class HeadlinesVC: BaseWireframe, CustomeNavbarProtocol {
     
     @objc
     private func didTapLocalizationButton() {
-        
+        presenter.didTapLocalizationButton()
     }
     
     @objc
@@ -84,6 +85,7 @@ extension HeadlinesVC: UISearchBarDelegate, UITextFieldDelegate {
 
 // MARK: - Presenter Delegate
 extension HeadlinesVC: HeadlinesViewProtocol {
+    
     func animateUI(_ status: Bool) {
         searchBar.isHidden = status
         tableViewTopConstraint.constant = status ? 0 : 60
@@ -98,25 +100,26 @@ extension HeadlinesVC: HeadlinesViewProtocol {
     }
     
     func setupSegmentedControll(with titles: [String]) {
-        segmentedControl.setTitle(titles[0].capitalizingFirstLetter(), forSegmentAt: 0)
-        segmentedControl.setTitle(titles[1].capitalizingFirstLetter(), forSegmentAt: 1)
-        segmentedControl.setTitle(titles[2].capitalizingFirstLetter(), forSegmentAt: 2)
+        segmentedControl.setTitle(titles[0].capitalizingFirstLetter().localized, forSegmentAt: 0)
+        segmentedControl.setTitle(titles[1].capitalizingFirstLetter().localized, forSegmentAt: 1)
+        segmentedControl.setTitle(titles[2].capitalizingFirstLetter().localized, forSegmentAt: 2)
     }
     
     func setupSearchBar() {
         searchBar.delegate = self
         searchBar.searchTextField.delegate = self
+        searchBar.placeholder = "HeadlinesVC.searchBar.placeholder".localized
     }
     
     func setupRefreshController() {
-        refreshControl.attributedTitle = NSAttributedString(string: "Refresh")
+        refreshControl.attributedTitle = NSAttributedString(string: "Refresh".localized)
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         tableView.addSubview(refreshControl)
     }
     
     func setupNavbar() {
         let leftBarButtonItem: UIBarButtonItem = UIBarButtonItem(
-            title: "AR",
+            title: "HeadlinesVC.LanguageButton".localized,
             style: .done,
             target: self,
             action: #selector(didTapLocalizationButton)
@@ -128,7 +131,7 @@ extension HeadlinesVC: HeadlinesViewProtocol {
             action: #selector(didTapFavoritesButton)
         )
         setupCustomeNavbar(
-            with: "Headlines",
+            with: "HeadlinesVC.title".localized,
             leftbarButtonItems: [leftBarButtonItem],
             rightbarButtonItems: [rightBarButtonItem]
         )
@@ -156,8 +159,25 @@ extension HeadlinesVC: HeadlinesViewProtocol {
     }
     
     func showError(with title: String, message: String) {
-        let action = UIAlertAction(title: "Okay", style: .default)
+        let action = UIAlertAction(title: "Okay".localized, style: .default)
         displayAlert(with: title, message: message, actions: [action])
+    }
+    
+    func presentAlertToChangeLanguage() {
+        let dismissAction = UIAlertAction(title: "Dismiss".localized, style: .cancel)
+        let changeAction = UIAlertAction(
+            title: "Continue".localized,
+            style: .destructive
+        ) { [weak self] _ in
+            guard let self = self else { return }
+            MOLH.setLanguageTo(self.currentLanguage == "en" ? "ar" : "en")
+            MOLH.reset()
+        }
+        displayAlert(
+            with: "Change Language".localized,
+            message: "App will terminate to change the current language".localized,
+            actions: [dismissAction, changeAction]
+        )
     }
 }
 
@@ -200,7 +220,7 @@ extension HeadlinesVC: UITableViewDelegate, UITableViewDataSource {
     ) -> UISwipeActionsConfiguration? {
         let shareAction = UIContextualAction(
             style: .normal,
-            title: "Add to favotite"
+            title: "Add to favotite".localized
         ) { (_: UIContextualAction, _: UIView, success: (Bool) -> Void) in
             self.presenter.didSwipeToAddToFavorites(at: indexPath)
             success(true)

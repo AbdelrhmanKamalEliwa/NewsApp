@@ -83,8 +83,8 @@ class HeadlinesPresenter: HeadlinesPresenterProtocol {
     func didSelectItem(at indexPath: IndexPath) {
         guard !cacheStatus else {
             view?.showError(
-                with: "No Internet Connection",
-                message: "Please check your internet connection and try again"
+                with: "No Internet Connection".localized,
+                message: "Please check your internet connection and try again".localized
             )
             return
         }
@@ -94,7 +94,10 @@ class HeadlinesPresenter: HeadlinesPresenterProtocol {
             let stringUrl = model?.url,
             let url = URL(string: stringUrl)
         else {
-            view?.showError(with: "Invalid URL", message: "Can't open the atricle on Safari")
+            view?.showError(
+                with: "Invalid URL".localized,
+                message: "Can't open the atricle on Safari".localized
+            )
             return
         }
         router.presentSafariVC(form: view, with: url)
@@ -150,6 +153,10 @@ class HeadlinesPresenter: HeadlinesPresenterProtocol {
         cacheStatus ? addCachedArticleToFavorites(at: indexPath) : addArticleToFavorites(at: indexPath)
     }
     
+    func didTapLocalizationButton() {
+        view?.presentAlertToChangeLanguage()
+    }
+    
     private func addArticleToFavorites(at indexPath: IndexPath) {
         var article: ArticleModel?
         article = isSearching ? searchDataSource[indexPath.row] : dataSource[indexPath.row]
@@ -190,29 +197,6 @@ class HeadlinesPresenter: HeadlinesPresenterProtocol {
             isPaginated: isPaginated
         )
     }
-    
-//    private func getCategoriesTitles() -> [String] {
-//        var titles: [String] = []
-//        categories.forEach { category in
-//            switch category {
-//            case .business:
-//                titles.append("business")
-//            case .entertainment:
-//                titles.append("entertainment")
-//            case .general:
-//                titles.append("general")
-//            case .health:
-//                titles.append("health")
-//            case .science:
-//                titles.append("science")
-//            case .sports:
-//                titles.append("sports")
-//            case .technology:
-//                titles.append("technology")
-//            }
-//        }
-//        return titles
-//    }
 }
 
 // MARK: - Interactor Response
@@ -241,7 +225,7 @@ extension HeadlinesPresenter: HeadlinesInteractorOutputProtocol {
     
     func dataFetchingFailed(withError error: Error?) {
         view?.hideLoadingAnimation()
-        view?.showError(with: "Error", message: error?.localizedDescription ?? "")
+        view?.showError(with: "Error".localized, message: error?.localizedDescription ?? "")
     }
     
     func noInternetConnection() {
@@ -257,13 +241,13 @@ extension HeadlinesPresenter: HeadlinesInteractorOutputProtocol {
     
     func coreDataResponseFailed(_ error: Error?) {
         guard let error = error else { return }
-        view?.showError(with: "Error", message: error.localizedDescription)
+        view?.showError(with: "Error".localized, message: error.localizedDescription)
     }
     
     func articleAddedToFavoritesSuccessfully() {
         view?.showError(
-            with: "Success",
-            message: "Article has been added to favorites successfully"
+            with: "Success".localized,
+            message: "Article has been added to favorites successfully".localized
         )
     }
 }

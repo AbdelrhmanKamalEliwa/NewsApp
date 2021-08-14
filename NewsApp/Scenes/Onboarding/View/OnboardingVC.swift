@@ -29,6 +29,11 @@ class OnboardingVC: BaseWireframe, DefaultNavbarProtocol {
         presenter.viewWillAppear()
     }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        presenter.viewDidLayoutSubViews()
+    }
+    
     @IBAction private func didTapCategoriesButtons(_ sender: UIButton) {
         presenter.didTapCategoriesButtons(for: sender.tag, with: sender.accessibilityIdentifier)
     }
@@ -49,9 +54,16 @@ class OnboardingVC: BaseWireframe, DefaultNavbarProtocol {
 extension OnboardingVC: OnBoardingViewProtocol {
    
     func setupUI() {
-        titleLabel.text = "OnboardingVC.titleLabel".localized
         listenToPickerView()
         startButton.cornerRadius = startButton.frame.height / 6
+    }
+    
+    func setLocalizedStrings() {
+        titleLabel.text = "OnboardingVC.titleLabel".localized
+        countryTitleLabel.text = "OnboardingVC.countryTitleLabel".localized
+        categoriesTitleLabel.text = "OnboardingVC.categoriesTitleLabel".localized
+        categoriesTitles.forEach({$0.text = Categories.getTitle(for: $0.tag).localized})
+        startButton.setTitle("OnboardingVC.startButton".localized, for: .normal)
     }
     
     func setupNavbar() {

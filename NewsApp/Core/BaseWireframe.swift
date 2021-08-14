@@ -11,6 +11,10 @@ protocol BaseProtocol: ProgressDisplayerProtocol, AlertDisplayerProtocol { }
 
 class BaseWireframe: UIViewController, BaseProtocol {
     
+    var currentLanguage: String {
+        "CurrentAppLanguage".localized
+    }
+    
     // MARK: Init
     required init() {
         super.init(nibName: String(describing: type(of: self)), bundle: nil)

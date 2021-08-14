@@ -29,7 +29,7 @@ class FavoritesVC: BaseWireframe, CustomeNavbarProtocol {
 extension FavoritesVC: FavoritesViewProtocol {
    
     func setupNavbar() {
-        setupCustomeNavbar(with: "Favorites", largeTitle: true)
+        setupCustomeNavbar(with: "FavoritesVC.title".localized, largeTitle: true)
     }
     
     func setupTableView() {
@@ -53,7 +53,7 @@ extension FavoritesVC: FavoritesViewProtocol {
     }
     
     func showError(with title: String, message: String) {
-        let action = UIAlertAction(title: "Okay", style: .default)
+        let action = UIAlertAction(title: "Okay".localized, style: .default)
         displayAlert(with: title, message: message, actions: [action])
     }
 }

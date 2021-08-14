@@ -38,4 +38,25 @@ enum Categories: Int {
         }
         return titles
     }
+    
+    static func getTitle(for tag: Int) -> String {
+        switch self.init(rawValue: tag) {
+        case .business:
+            return "Business"
+        case .entertainment:
+            return "Entertainment"
+        case .general:
+            return "General"
+        case .health:
+            return "Health"
+        case .science:
+            return "Science"
+        case .sports:
+            return "Sports"
+        case .technology:
+            return "Technology"
+        case .none:
+            return ""
+        }
+    }
 }

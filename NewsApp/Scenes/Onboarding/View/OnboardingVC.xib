@@ -59,17 +59,17 @@
                                     <color key="textColor" name="AppBlack"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OLS-ju-sFk">
-                                    <rect key="frame" x="35" y="91.666666666666671" width="344" height="235.33333333333331"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="OLS-ju-sFk">
+                                    <rect key="frame" x="35" y="91.666666666666671" width="320" height="235.33333333333331"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select your favorite country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tSY-OQ-Rc6">
-                                            <rect key="frame" x="0.0" y="0.0" width="344" height="19.333333333333332"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="208.66666666666666" height="19.333333333333332"/>
                                             <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="16"/>
                                             <color key="textColor" name="AppBlack"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vT7-h1-4XU" customClass="CountryPickerView" customModule="SKCountryPicker">
-                                            <rect key="frame" x="0.0" y="19.333333333333329" width="344" height="216"/>
+                                            <rect key="frame" x="0.0" y="19.333333333333329" width="320" height="216"/>
                                         </pickerView>
                                     </subviews>
                                 </stackView>
@@ -283,7 +283,7 @@
                                 <constraint firstItem="kTK-Xx-5cr" firstAttribute="leading" secondItem="hRQ-lo-yHI" secondAttribute="leading" constant="35" id="b2P-sy-ptF"/>
                                 <constraint firstAttribute="trailing" secondItem="JJW-rw-4HX" secondAttribute="trailing" constant="35" id="dhE-gc-VKI"/>
                                 <constraint firstAttribute="bottom" secondItem="CHX-my-o6g" secondAttribute="bottom" constant="20" id="dml-e6-5Qj"/>
-                                <constraint firstAttribute="trailing" secondItem="OLS-ju-sFk" secondAttribute="trailing" constant="35" id="hiM-5C-qhH"/>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="OLS-ju-sFk" secondAttribute="trailing" constant="35" id="hiM-5C-qhH"/>
                                 <constraint firstItem="JJW-rw-4HX" firstAttribute="top" secondItem="OLS-ju-sFk" secondAttribute="bottom" constant="30" id="jjF-6q-hin"/>
                                 <constraint firstAttribute="trailing" secondItem="kTK-Xx-5cr" secondAttribute="trailing" constant="35" id="wYw-SC-01X"/>
                             </constraints>

@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func start() {
         let mainRouter = MainRouter()
         window = UIWindow()
-        window?.rootViewController = mainRouter.setInitialVC()
+        window?.rootViewController = UINavigationController(rootViewController: OnboardingRouter.createModule())
         window?.makeKeyAndVisible()
     }
     
@@ -73,4 +73,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+}
+
+extension AppDelegate: MOLHResetable {
+    func reset() {
+        exit(0)
+    }
 }
