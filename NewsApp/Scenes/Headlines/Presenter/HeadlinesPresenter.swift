@@ -172,7 +172,6 @@ class HeadlinesPresenter: HeadlinesPresenterProtocol {
         favoriteArticleId = articleId
         favoriteArticle = article
         interactor.fetchFavorites()
-        //interactor.addToFavorites(article, articleId: articleId)
     }
     
     private func addCachedArticleToFavoritesBeforeCheck(at indexPath: IndexPath) {
@@ -193,7 +192,6 @@ class HeadlinesPresenter: HeadlinesPresenterProtocol {
         favoriteArticleId = articleId
         favoriteArticle = article
         interactor.fetchFavorites()
-        //interactor.addToFavorites(article, articleId: articleId)
     }
     
     private func fetchData(isPaginated: Bool) {
@@ -208,12 +206,8 @@ class HeadlinesPresenter: HeadlinesPresenterProtocol {
     }
     
     func addArticlesToFavortieAfterCheck(in data: [FavoriteArticles]) {
-        guard !data.isEmpty else {
-            view?.showError(with: "Error".localized, message: "Failed to add the article to favorites".localized)
-            return
-        }
         var favoriteArticles: [ArticleModel] = []
-        for article in data {
+        for article in data where !data.isEmpty {
             favoriteArticles.append(
                 ArticleModel(
                     source: SourceModel(id: article.articleId, name: article.source),
